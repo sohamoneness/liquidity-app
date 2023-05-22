@@ -1,0 +1,24 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-androidx-adapter": {
+      "PACKAGE_NAME": "com.app.liquidityCanada"
+    },
+    "call-number": {
+      "PACKAGE_NAME": "com.app.liquidityCanada"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.app.liquidityCanada"
+    },
+    "cordova-plugin-androidx": {
+      "PACKAGE_NAME": "com.app.liquidityCanada"
+    }
+  },
+  "dependent_plugins": {}
+}

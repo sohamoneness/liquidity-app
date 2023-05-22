@@ -1,0 +1,92 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="chevron-back-outline" defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Searchbar</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <!-- <ion-searchbar [(ngModel)]="txt" (ionInput)="search()"></ion-searchbar> -->
+    <div class="search_bar">
+      <ion-input type="text" [(ngModel)]="txt" placeholder="Search here.."></ion-input>
+      <span (click)="search()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_21_31)">
+          <path d="M10.5691 0C4.74145 0 0 4.74145 0 10.5691C0 16.3971 4.74145 21.1382 10.5691 21.1382C16.3971 21.1382 21.1382 16.3971 21.1382 10.5691C21.1382 4.74145 16.3971 0 10.5691 0ZM10.5691 19.187C5.81723 19.187 1.95122 15.321 1.95122 10.5691C1.95122 5.81728 5.81723 1.95122 10.5691 1.95122C15.321 1.95122 19.187 5.81723 19.187 10.5691C19.187 15.321 15.321 19.187 10.5691 19.187Z" fill="#28303F"/>
+          <path d="M23.7142 22.3347L18.1207 16.7412C17.7395 16.36 17.1223 16.36 16.7411 16.7412C16.36 17.122 16.36 17.7399 16.7411 18.1207L22.3346 23.7142C22.4251 23.805 22.5326 23.8769 22.651 23.926C22.7694 23.975 22.8963 24.0002 23.0244 24.0001C23.1525 24.0002 23.2794 23.975 23.3978 23.9259C23.5162 23.8769 23.6237 23.8049 23.7142 23.7142C24.0953 23.3334 24.0953 22.7155 23.7142 22.3347Z" fill="#28303F"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_21_31">
+          <rect width="24" height="24" fill="white"/>
+          </clipPath>
+          </defs>
+        </svg>
+      </span>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <ion-list class="search_list" *ngIf="searchHistory && searchHistory.length>0">
+    <ion-item *ngFor="let item of searchHistory">
+      <span (click)="oldSearch(item.keyword)">{{item.keyword}}</span>
+      <ion-icon slot="end" name="close-outline" (click)="delete(item.id)"></ion-icon>
+    </ion-item>   
+  </ion-list>
+
+  <ion-list class="search_list" *ngIf="products1 && products1.length>0">
+    <ion-item *ngFor="let item of products1" (click)="gotoSearchDetails(item)">{{item.name}}
+      <!-- <span slot="end" (click)="gotounsave(fav.id)">
+        <ion-icon name="heart"></ion-icon>
+      </span> -->
+    </ion-item>
+  </ion-list>
+
+
+  <div class="store_list" *ngIf="shopList && shopList.length>0">
+    <ion-item-divider>Stores</ion-item-divider>
+
+    <div class="store_item" *ngFor = "let shop of shopList">
+      <figure>
+        <ion-img src="{{shop.image}}"></ion-img>
+        <span (click)="save(shop.id,shop.is_in_watchlist)">
+          <ion-icon name="bookmark-outline" *ngIf="shop.is_in_watchlist==0"></ion-icon>
+          <ion-icon name="bookmark" class="active" *ngIf="shop.is_in_watchlist==1"></ion-icon>
+        </span>
+      </figure>
+      <figcaption>
+        <div class="outlet_distance">
+          <h4 class="shopTitle"><strong (click)="gotoshopproduct(shop.id,shop)">{{shop.name}}</strong></h4>
+          <p (click)="gotoshopproduct(shop.id,shop)">{{shop.address}}</p>
+        </div>
+        <div class="distance_sec">
+          <small><ion-icon name="compass-outline"></ion-icon>{{shop.distance}}</small>
+          <small><ion-icon name="time-outline"></ion-icon> {{shop.time}}min</small>
+        </div>
+      </figcaption>
+    </div>
+  </div>
+
+  <!-- <ion-list *ngIf="shopList && shopList.length>0">
+    <ion-list-header>
+      <ion-label>Stores</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor = "let shop of shopList">
+      <ion-thumbnail slot="start">
+        <ion-img src="{{shop.image}}"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        
+        <p (click)="gotoshopproduct(shop.id,shop)">{{shop.address}}</p>
+        <div class="distance_sec">
+          <p >
+            <small><ion-icon name="compass-outline"></ion-icon>
+              {{shop.distance}}</small>
+            <small><ion-icon name="time-outline"></ion-icon> {{shop.time}}min</small>
+          </p>
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list> -->
+</ion-content>

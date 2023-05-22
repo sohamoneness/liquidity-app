@@ -1,0 +1,19 @@
+
+<ion-content padding>
+	<div class="login_section">
+		<div class="login_block">
+			<div class="logo_wrap">
+				<img src="../../assets/logo.png">
+			</div>
+			<div class="form_wrap">
+				<p>Sign in to have a unique experience and<br><span class="spare">COMPARE</span><span class="spare">RESERVE</span><span class="spare">REDEEM</span></p>
+				<ion-input placeholder="Enter Your Email Id" [(ngModel)]="usermail"></ion-input>
+				<ion-input placeholder="Enter Your Password" type="password" [(ngModel)]="password"></ion-input>
+				<ion-button class="btn-submit" expand="block" shape="round" routerDirection="forward" (click)="submitLogin()">Sign In</ion-button>
+				<p class="signup_text"> <a (click)="goToForgetPassword()">Forgot your password?</a></p>
+				<p class="signup_text">Don't have an account? <span (click)="goToSignUp()">Sign Up</span></p>
+				<ion-button class="btn-submit" expand="block" shape="round" routerDirection="forward" (click)="goToMbile()">Sig</ion-button>
+			</div>
+		</div>
+	</div>
+</ion-content>

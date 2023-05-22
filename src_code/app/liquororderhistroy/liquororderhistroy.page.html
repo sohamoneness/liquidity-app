@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref="/homenew"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Order Histroy</ion-title>
+    <!-- <ion-label>SELECTED LOCATION</ion-label>
+    <ion-item>
+    <ion-select value="kolkata">
+      <ion-select-option selected value="kolkata">kolkata</ion-select-option>
+      <ion-select-option value="mumbai">mumbai</ion-select-option>
+      <ion-select-option value="bangalore">bangalore</ion-select-option>
+      <ion-select-option value="delhi">delhi</ion-select-option>
+    </ion-select>
+  </ion-item> -->
+    <!-- <ion-icon slot="end" class="search_item" name="search-outline"></ion-icon> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="title_bar">
+    <h2 class="title">Orders</h2>
+  </div>
+  <div class="order_list">
+    <ion-item *ngFor="let item of orders">
+      <ion-thumbnail slot="start">
+        <img src="{{item.shop.image}}">
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{item.shop.name}}</h3>
+        <p>Order ID: <span class="bold_count">{{item.unique_id}}</span></p>
+        <p>Order Date: <span class="bold_count">{{item.created_at}}</span></p>
+        <div class="btn_grp">
+          <ion-button fill="outline" (click)="orderDetails(item)">ORDER DETAILS</ion-button>
+          <!-- <ion-button fill="outline" (click)="cancelOrder(item)">CANCEL ORDER</ion-button> -->
+        </div>
+      </ion-label>
+    </ion-item>
+  </div>
+</ion-content>

@@ -1,0 +1,161 @@
+ion-header {
+    ion-toolbar {
+        --background: transparent;
+        --ion-color-base: transparent !important;
+    }
+
+    ion-button {
+        --background: #fff;
+        --border-radius: 50%;
+        margin: 0;
+        margin-right: 10px;
+        --padding-start: 9px;
+        --padding-end: 9px;
+        --padding-top: 2px;
+        --padding-bottom: 2px;
+        height: 38px;
+        line-height: 0;
+        
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    ion-back-button {
+        --background: #fff;
+        --border-radius: 50%;
+        margin: 0;
+        margin-left: 6px;
+        --padding-start: 7px;
+        --padding-end: 7px;
+        --padding-top: 2px;
+        --padding-bottom: 2px;
+        height: 38px;
+        min-width: 38px;
+        line-height: 0;
+    }
+}
+ion-content {
+	--background: #fff;
+
+	.resturant_img_wrap {
+	    margin-bottom: 0;
+        background-color: #fff;
+        padding: 0;
+        line-height: 0;
+
+        img {
+        	width: 100%;
+            position: relative;
+            margin-top: -56px;
+            border-radius: 0 0 10px 10px;
+        }
+	}
+
+    .res_content {
+        width: calc(100% - 20px);
+        margin: 0 auto;
+        padding: 10px 20px;
+        font-weight: 500;
+        margin-bottom: 50px;
+
+        p {
+            margin-bottom: 16px;
+            font-size: 13px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+    }
+
+    .resturant_title_wrap {
+        width: calc(100% - 20px);
+        margin: -30px auto 0;
+        position: relative;
+        z-index: 9;
+        background: #fff;
+        padding: 10px 20px 20px;
+        border-radius: 10px;
+
+        &:after {
+            width: 96%;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 100%;
+            transform: translate(-50%,10.7px);
+            z-index: -1;
+        }
+    }
+
+    .address {
+        font-size: 13px;
+        font-weight: 500;
+        color: #888;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        img {
+            margin-right: 5px;
+        }
+    }
+
+	.br-1 {
+		margin: 10px 0 10px;
+        background: #f8f8f8;
+	}
+    .btn_group {
+        .btn-outlet {
+            width: calc(50% - 10px);
+            margin: 0;
+            font-size: 13px;
+            height: 36px;
+        }
+    }
+}
+ion-footer {
+	.footer_item_end {
+	    background-color: #dcc88d;
+        justify-content: center;
+        padding-right: 0;
+
+        p {
+            font-family: "Outfit" !important;
+            text-transform: uppercase;
+        }
+	}
+}
+
+.star-icon{
+    color: #fff;
+}
+.rating_number {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 6px;
+    position: absolute;
+    top: 10px;
+    left: auto;
+    right: 10px;
+    z-index: 9;
+    background: #fff;
+    border-radius: 24px;
+
+    img {
+        width: 16px;
+        height: auto;
+        margin: auto !important;
+        margin-right: 6px !important;
+    }
+
+    p {
+        margin: 0;
+        font-size: 16px;
+    }
+}
+.resturant_title_wrap .content {
+    font-size: 14px;
+}

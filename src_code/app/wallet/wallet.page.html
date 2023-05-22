@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+  		<ion-back-button icon="arrow-back-outline" defaultHref="/homenew"></ion-back-button>
+  	</ion-buttons>
+    <ion-title>My Test Funds</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content no-padding>
+	<form [formGroup]="loginForm">
+    <ion-card class="address">
+      <ion-item>
+          <ion-label fixed>Enter Amount</ion-label>
+          <ion-input type="number" formControlName="amount" name="amount" [(ngModel)]="wallet_amount" placeholder="Enter Amount"></ion-input>
+        </ion-item>
+    </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          <button ion-button block [disabled]="!loginForm.valid" (click)="pay()">Add Balance</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  <ion-card  *ngFor="let item of walletList">
+    <ion-row>
+      <ion-col col-7>
+        <h5>Transaction Id: {{item.transaction_id}}</h5>
+        <h4 *ngIf="item.type==1">Rs.{{item.amount}}</h4>
+        <h4 *ngIf="item.type==2">Rs.{{item.amount}} (Order Id : {{item.order_id}})</h4>
+      </ion-col>
+      <ion-col col-5 text-right>
+        <h6 class="status" *ngIf="item.type==1">Credited</h6>
+        <h6 class="status" *ngIf="item.type==2" style="color: #ff0000">Deducted</h6>
+        <h6>{{item.date_time}}</h6>
+      </ion-col>
+      
+    </ion-row>
+  </ion-card>
+
+  <ion-card *ngIf="!walletList || walletList.length==0">
+    <ion-row>
+      <ion-col col-12>
+        <h5 text-center>No records found.</h5>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+    
+</ion-content> -->
+
+<ion-content>
+  <div class="menu__header">
+    <div class="user__image">
+      <img src="assets/user.jpg" />
+    </div>
+    <h6>{{user_name}}</h6>
+    <p>{{user_mail}}</p>
+    <p>+91 {{user_mobile}}</p>
+    <a  class="menu__button">Test Fund Balance: <span class="currency">&#8377;</span> {{wallet_balance  | number : '.2-2'}}</a>
+  </div>
+  <div class="title_bar">
+    <h2 class="title">Add Balance</h2>
+  </div>
+  <div class="row">
+    <ion-list class="drink_items drink_items_mod">
+      <ion-item>
+        <ion-grid>
+          <ion-row class="ion-align-items-center" [formGroup]="loginForm">
+            <ion-input type="number" formControlName="amount" name="amount" [(ngModel)]="wallet_amount" placeholder="Enter Amount"></ion-input>
+            <button ion-button block [disabled]="!loginForm.valid" (click)="pay()" class="add_btn">Add Balance</button>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="title_bar">
+    <h2 class="title">Transaction History</h2>
+  </div>
+  <div class="order-summary" *ngFor="let item of walletList">
+    <a class="edit_button" style="color: #3fb265; border: 1px solid #3fb265;" *ngIf="item.type==1">Credited</a>
+    <a class="edit_button" style="color: #ff0000; border: 1px solid #ff0000;" *ngIf="item.type==2">Deducted</a>
+    <p><span>Transaction Id:</span> {{item.transaction_id}}</p>
+    <p *ngIf="item.type==1"><span>Amount:</span> Rs.{{item.amount}}</p>
+    <p *ngIf="item.type==2"><span>Amount:</span> Rs.{{item.amount}} (Order Id : {{item.order_id}})</p>
+    <p><span>Date & Time:</span> {{item.date_time}} </p>
+  </div>
+
+  
+</ion-content>
+

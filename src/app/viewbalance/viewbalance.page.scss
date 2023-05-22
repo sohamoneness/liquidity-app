@@ -1,0 +1,146 @@
+ion-content {
+    .balance_bottle {
+        background: url(../../assets/404250.webp) left center no-repeat;
+        background-size: cover;
+        position: relative;
+        padding: 30px 0;
+        margin-bottom: 10px;
+
+        &:before {
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.1);
+            backdrop-filter: blur(3px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+        }
+        .keys {
+            width: 105px;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #fff;
+            padding: 30px 16px;
+
+            h2 {
+                white-space: nowrap;
+                font-weight: 900;
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+
+                li {
+                    display: block;
+                    font-size: 10px;
+                    padding: 10px 0;
+                    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+                    label {
+                        color: #cccccc;
+                    }
+                    p {
+                        font-weight: 600;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    ion-item-divider {
+		--padding-start: 10px;
+		--background: transparent;
+		font-size: 20px;
+		letter-spacing: 0.5px;
+		font-weight: 500;
+		margin-bottom: 10px;
+		border: none;
+	}
+    .view_history {
+        display: block;
+        width: calc(100% - 20px);
+        margin: 0 auto;
+        background: #f7f7f7;
+        font-size: 12px;
+        border-radius: 6px;
+
+        strong {
+            color: #888;
+            font-weight: 600;
+        }
+
+        ion-grid {
+            &.bottom-border {
+                border-bottom: 1px solid #eee;
+            }
+        }
+    }
+    .bottle {
+        width: 92px;
+        height: 300px;
+        background: url(../../assets/empty_bottle.png) bottom center no-repeat;
+        background-size: 100% auto;
+        display: flex;
+        align-items: flex-end;
+        margin: 0 auto;
+        z-index: 99;
+        position: relative;
+
+        .inner {
+            width: 92px;
+            height: 270px;
+            overflow: hidden;
+            -webkit-mask-image: url(../../assets/empty_bottle.png);
+            -webkit-mask-size: 100% auto;
+            -webkit-mask-repeat: no-repeat;
+            mix-blend-mode: multiply;
+            -webkit-mask-position: bottom center;
+        }
+    }
+    
+    .bottle .fill {
+        animation-name: fillAction;
+        animation-iteration-count: 1;
+        animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
+        animation-duration: 8s;
+        animation-fill-mode: forwards;
+      }
+      .bottle .waveShape {
+        animation-name: waveAction;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-duration: 0.5s;
+        width: 300px;
+        height: 150px;
+        fill: #d6820a;
+    }
+
+    .drink_items {
+        padding: 0 10px;
+
+        ion-item {
+            min-height: 30px;
+
+            ion-label {
+                font-size: 13px;
+                margin: 10px 0;
+            }
+    
+            ion-note {
+                padding: 0;
+                font-size: 13px;
+                margin: 10px 0;
+            }
+        }
+    }
+}
+
+ion-footer .footer_content.half .footer_item_end {
+    flex: 0 0 50%;
+}

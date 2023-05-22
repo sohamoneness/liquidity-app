@@ -1,0 +1,15 @@
+<ion-content padding>
+	<div class="login_section">
+		<div class="login_block">
+			<div class="logo_wrap">
+				<img src="../../assets/logo.png">
+			</div>
+			<div class="form_wrap">
+				<p>Sign in to have a unique experience and<br><span class="spare">COMPARE</span><span class="spare">RESERVE</span><span class="spare">REDEEM</span></p>
+         <ion-input type="tel" [(ngModel)]="phone" maxlength="10" minlength="10" placeholder="Enter Mobile Number."></ion-input>
+				<ion-button class="btn-submit" expand="block" shape="round" routerDirection="forward" (click)="loginViaMobile()">Sign In</ion-button>
+				<!-- <ion-button class="btn-submit" expand="block" shape="round" routerDirection="forward" >Sign Up</ion-button> -->
+			</div>
+		</div>
+	</div>
+</ion-content>

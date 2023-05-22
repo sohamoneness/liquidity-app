@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button icon="arrow-back-outline" defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title>SELECTED LOCATION</ion-title> -->
+    <ion-title>View Balance</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="balance_bottle">
+    <div class="keys">
+      <h2>Vault<br/>Liquor 1</h2>
+      <ul>
+        <li>
+          <label>Total Unit</label>
+          <p>25</p>
+        </li>
+        <li>
+          <label>Units Redeemed</label>
+          <p>5</p>
+        </li>
+        <li>
+          <label>Remaining Units</label>
+          <p>20</p>
+        </li>
+        <li>
+          <label>Valid upto</label>
+          <p>20 May 2023</p>
+        </li>
+      </ul>
+    </div>
+    <div class="bottle">
+      <div class="inner" style="height: 60%;">
+        <div class="fill">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+            <path class="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
+        c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
+        c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <ion-item-divider>
+      Redeem History
+    </ion-item-divider>
+    <div class="view_history">
+      <ion-grid class="bottom-border">
+        <ion-row>
+          <ion-col size="4"><strong>Outlet</strong></ion-col>
+          <ion-col size="4" class="ion-text-center"><strong>Date</strong></ion-col>
+          <ion-col size="4" class="ion-text-right"><strong>Units</strong></ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">Liquidity Trend Sstter</ion-col>
+          <ion-col size="4" class="ion-text-center">15 March 2023</ion-col>
+          <ion-col size="4" class="ion-text-right">3</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+
+<ion-footer class="ion-no-border">
+	<div class="footer_content half">
+    <div class="footer_item_end">
+			<div class="reserve_btn">
+				<p>Renew</p>
+				<img src="assets/arrow-right.png">
+			</div>
+		</div>
+		<div class="footer_item_end">
+			<div class="reserve_btn">
+				<p>Redeem</p>
+				<img src="assets/arrow-right.png">
+			</div>
+		</div>
+	</div>
+  </ion-footer>

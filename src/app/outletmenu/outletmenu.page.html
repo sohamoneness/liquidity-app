@@ -1,0 +1,366 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+		  <ion-back-button icon="chevron-back-outline" text="" defaultHref=""></ion-back-button>
+		</ion-buttons>
+    <ion-title>{{this.shopName}}</ion-title>
+		<ion-buttons slot="end">
+			<ion-button (click)="cart()">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+			</ion-button>
+		</ion-buttons>	  
+	</ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<div>
+  <ion-segment [(ngModel)]="drinks" scrollable="true">
+    <ion-segment-button value="liquor" (click)="LiquorSections()">
+      LIQUOR
+    </ion-segment-button>
+    <ion-segment-button value="food" (click)="FoodSection()">
+      FOOD
+    </ion-segment-button>
+    <ion-segment-button value="soft-beverage" (click)="SoftSection()">
+      SOFT BEVERAGE
+    </ion-segment-button>
+    <ion-segment-button value="combo" (click)="ComboSection()">
+      COMBO
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div [ngSwitch]="drinks">
+  <ion-list *ngSwitchCase="'liquor'" class="segment_2">
+    <!-- <div padding>
+      <ion-segment [(ngModel)]="scotch">
+        <ion-segment-button  *ngFor="let item of liquorCategory" value="{{item.name}}" (click)="liquorSegmentPremium(item)" >
+         <img src="{{item.image}}">
+        <ion-button class="" shape="round">{{item.name}}</ion-button>
+        </ion-segment-button>
+      </ion-segment>
+    </div> -->
+      <ion-slides class="favourite_items" [options]="slideOpts">
+        <!-- <ion-slide *ngFor="let item of liquorCategory" value="{{item.name}}" (click)="liquorSegmentPremium(item)"> -->
+        <ion-slide *ngFor="let item of liquorCategory" (click)="liquorSegmentPremium(item)">
+          <figure style="background-color: #5b352e;">
+            <img src="{{item.image}}">
+            <span>{{item.name}}</span>
+          </figure>
+        </ion-slide>
+      </ion-slides>
+
+    <div [ngSwitch]="scotch">
+    <ion-list *ngSwitchCase=this.scotch class="drink_items">
+      <ion-item *ngFor="let item of addToLiquorItem.liquorItem">
+        <ion-thumbnail slot="start">
+          <img src="../../assets/15yo-single-malt-scotch-whisky.png">
+        </ion-thumbnail>
+        <ion-label>
+          <ion-grid>
+            <ion-row class="ion-align-items-center">
+              <ion-col size="8">
+                <div class="drink_content fav_sec">
+                  <span (click)="addToFavrite(item.itemId,item.is_fav)" class="fav_btn" *ngIf="sections =='0'">
+                    <ion-icon name="heart-outline" *ngIf="item.is_fav==0"></ion-icon>
+                    <ion-icon name="heart" class="active" *ngIf="item.is_fav==1"></ion-icon>
+                  </span>
+                  <h3>{{item.name}}</h3>
+                </div>
+                <div class="drink_content">
+                  <ul>
+                    <li>High<span class="price_hike"><span class="currency">$</span> {{item.highest_price | number : '.2-2'}} <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-right-up"><polyline points="10 9 15 4 20 9"></polyline><path d="M4 20h7a4 4 0 0 0 4-4V4"></path></svg></span></li>
+                    <li>Low<span class="price_down"><span class="currency">$</span> {{item.lowest_price | number : '.2-2'}} <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-right-down"><polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path></svg></span></li>
+                    <li>Now<span class="price_now"><span class="currency">$</span> {{item.current_price | number : '.2-2'}} </span></li>
+                  </ul>
+                </div>
+              </ion-col>
+              <ion-col size="4">
+                <div class="item_btn">
+                  <div class="quantity">
+                    <div (click)="plusss(item)">
+                      <span class="minus"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    </div>
+                    <!-- <p>{{getthisCounter(item)}}</p> -->
+                    <p>{{item.counter}}</p>
+                    <div (click)="minusss(item)">
+                      <span class="plus" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    </div>
+                  </div>
+                  <span (click)="addToCompare(item)"  *ngIf="sections =='0'" class="cmop">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M16 12.7612V6.6674C16 5.1948 14.8066 4 13.334 4H10.9428L11.9994 2.9426L11.0566 2L8.862 4.1954C8.80009 4.2573 8.75098 4.33079 8.71747 4.41168C8.68396 4.49256 8.66671 4.57925 8.66671 4.6668C8.66671 4.75435 8.68396 4.84104 8.71747 4.92192C8.75098 5.00281 8.80009 5.0763 8.862 5.1382L11.0574 7.3336L12 6.3906L10.9428 5.3334L13.334 5.334C13.5091 5.33403 13.6824 5.36854 13.8441 5.43557C14.0058 5.5026 14.1528 5.60083 14.2765 5.72465C14.4003 5.84847 14.4984 5.99546 14.5653 6.15722C14.6323 6.31898 14.6667 6.49234 14.6666 6.6674V12.7612C13.519 13.0586 12.6666 14.0924 12.6666 15.3334C12.6666 16.806 13.8608 18 15.3334 18C16.806 18 18 16.806 18 15.3334C18 14.0924 17.1478 13.0586 16 12.7612ZM15.3334 16.6666C14.9798 16.6666 14.6406 16.5262 14.3906 16.2762C14.1405 16.0261 14 15.687 14 15.3334C14 14.9798 14.1404 14.6406 14.3904 14.3906C14.6405 14.1405 14.9796 14 15.3332 14C15.5083 14 15.6817 14.0345 15.8434 14.1015C16.0052 14.1684 16.1522 14.2666 16.276 14.3904C16.3998 14.5142 16.4981 14.6612 16.5651 14.823C16.6321 14.9847 16.6666 15.1581 16.6666 15.3332C16.6666 15.5083 16.6321 15.6817 16.5651 15.8434C16.4982 16.0052 16.4 16.1522 16.2762 16.276C16.1524 16.3998 16.0054 16.4981 15.8436 16.5651C15.6819 16.6321 15.5085 16.6666 15.3334 16.6666ZM11.138 14.862L8.9428 12.6666L8 13.6094L9.0572 14.6666L6.666 14.666C6.49094 14.666 6.3176 14.6315 6.15588 14.5644C5.99416 14.4974 5.84723 14.3992 5.72348 14.2753C5.59974 14.1515 5.50159 14.0045 5.43466 13.8428C5.36773 13.681 5.33332 13.5077 5.3334 13.3326V7.2388C6.4818 6.9414 7.3334 5.9076 7.3334 4.6666C7.3334 3.1942 6.1392 2 4.6666 2C3.194 2 2 3.1942 2 4.6666C2 5.9076 2.8516 6.9414 4 7.2388V13.3326C4 14.8052 5.1934 16 6.666 16H9.0572L8.0006 17.0572L8.9434 18L11.138 15.8046C11.1999 15.7427 11.249 15.6692 11.2825 15.5884C11.316 15.5075 11.3333 15.4208 11.3333 15.3333C11.3333 15.2458 11.316 15.1591 11.2825 15.0782C11.249 14.9974 11.1999 14.9239 11.138 14.862ZM4.6666 6C4.31296 5.99995 3.97383 5.85941 3.7238 5.60931C3.47378 5.35922 3.33335 5.02004 3.3334 4.6664C3.33345 4.31276 3.47399 3.97363 3.72409 3.7236C3.97418 3.47358 4.31336 3.33315 4.667 3.3332C5.02064 3.33325 5.35977 3.47379 5.6098 3.72389C5.85982 3.97398 6.00025 4.31316 6.0002 4.6668C6.00015 5.02044 5.85961 5.35957 5.60951 5.6096C5.35942 5.85962 5.02024 6.00005 4.6666 6Z" fill="black"/>
+                      </svg>
+                       Compare
+                  </span>
+                </div>
+              </ion-col>
+              <!-- <ion-col size="6">
+                
+              </ion-col> -->
+              <!-- <ion-col size="6"> -->
+                
+                
+              <!-- <ion-button small class="conpare_btn" (click)="addToCompare(item)"  *ngIf="sections =='0'"><img src="assets/compare_btn.png"></ion-button>  -->
+              
+              <!-- </ion-col> -->
+              <!-- <ion-col size="2" class="ion-no-padding cardAdd">
+                
+                <ion-icon name="bag-add"></ion-icon>
+              </ion-col> -->
+            </ion-row>
+          </ion-grid>
+        </ion-label>
+      
+      </ion-item>
+
+    </ion-list>
+    </div>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'food'" class="ion-no-padding">
+    <!-- <div *ngFor="let category of addToFoodItem.foodItem"> -->
+      <!-- <div class="title_bar">
+        <h2 class="title">{{category.category_name}}</h2>
+      </div> -->
+      <div class="drink_items">
+        <ion-item *ngFor="let item of addToLiquorItem.liquorItem">
+          <ion-thumbnail slot="start" class="food">
+            <img src="../../assets/food.png">
+          </ion-thumbnail>
+          <ion-label>
+            <ion-grid>
+              <ion-row class="ion-align-items-center">
+                <ion-col size="8" class="pl-0">
+                  <div class="drink_content">
+                    <h3 class="no-margin">{{item.name}}</h3>
+                    <ul>
+                      <li class="text-left">{{item.description}}</li>
+                    </ul>
+                  </div>
+                </ion-col>
+                <ion-col size="4">
+                  <p class="net"><span class="currency">$</span> {{item.food_price | number : '.2-2'}}</p>
+                  <div class="quantity">
+                    <div (click)="plusss(item)">
+                      <span class="minus"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    </div>
+                    <!-- <p>{{getthisCounter(item)}}</p> -->
+                    <p>{{item.counter}}</p>
+      
+                    <div (click)="minusss(item)">
+                      <span class="plus" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    </div>
+                  </div>
+                  <ion-button small class="conpare_btn" (click)="addToCompare(item)" *ngIf="sections =='0'"><img src="assets/compare_btn.png"></ion-button> 
+                  </ion-col>
+                  <!-- <ion-col size="2" class="ion-no-padding cardAdd" (click)="addToCompare(item)">
+                    <img src="assets/cart.png" style="padding-top: 5px;">
+                    <ion-button small><img src="assets/add-cart.png"> Add</ion-button> 
+                  </ion-col> -->
+              </ion-row>
+            </ion-grid>
+          </ion-label>
+        </ion-item>
+
+      <!-- </div> -->
+    </div>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'soft-beverage'" class="ion-no-padding">
+    <!-- <div *ngFor="let category of addToFoodItem.foodItem"> -->
+      <!-- <div class="title_bar">
+        <h2 class="title">{{category.category_name}}</h2>
+      </div> -->
+      <div class="drink_items">
+        <ion-item *ngFor="let item of addToLiquorItem.liquorItem">
+          <ion-thumbnail slot="start" class="food">
+            <img src="../../assets/lemonade.png">
+          </ion-thumbnail>
+          <ion-label>
+            <ion-grid>
+              <ion-row class="ion-align-items-center">
+                <ion-col size="8" class="pl-0">
+                  <div class="drink_content">
+                    <h3 class="no-margin">{{item.name}}</h3>
+                    <ul>
+                      <li class="text-left">{{item.description}}</li>
+                    </ul>
+                  </div>
+                </ion-col>
+                <ion-col size="4">
+                  <p class="net"><span class="currency">$</span> {{item.food_price | number : '.2-2'}}</p>
+                  <div class="quantity">
+                    <div (click)="plusss(item)">
+                      <span class="minus"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    </div>
+                    <!-- <p>{{getthisCounter(item)}}</p> -->
+                    <p>{{item.counter}}</p>
+      
+                    <div (click)="minusss(item)">
+                      <span class="plus" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                    </div>
+                  </div>
+                  <ion-button small class="conpare_btn" (click)="addToCompare(item)" *ngIf="sections =='0'"><img src="assets/compare_btn.png"></ion-button> 
+                  </ion-col>
+                  <!-- <ion-col size="2" class="ion-no-padding cardAdd" (click)="addToCompare(item)">
+                    <img src="assets/cart.png" style="padding-top: 5px;">
+                    <ion-button small><img src="assets/add-cart.png"> Add</ion-button> 
+                  </ion-col> -->
+              </ion-row>
+            </ion-grid>
+          </ion-label>
+          
+        </ion-item>
+
+      <!-- </div> -->
+    </div>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'combo'" class="ion-no-padding">
+    <!-- <div *ngFor="let category of addToFoodItem.foodItem"> -->
+      <!-- <div class="title_bar">
+        <h2 class="title">{{category.category_name}}</h2>
+      </div> -->
+      <div class="drink_items">
+        <ion-item *ngFor="let item of addToLiquorItem.liquorItem">
+          <ion-thumbnail slot="start" class="food">
+            <img src="../../assets/combo_offer.png">
+          </ion-thumbnail>
+          <ion-label>
+          <ion-grid>
+            <ion-row class="ion-align-items-center">
+              <ion-col size="8" class="pl-0">
+                <div class="drink_content">
+                  <h3 class="no-margin">{{item.name}}</h3>
+                  <ul>
+                    <li class="text-left">{{item.description}}</li>
+                  </ul>
+                </div>
+              </ion-col>
+              <ion-col size="4">
+                <p class="net"><span class="currency">$</span> {{item.food_price | number : '.2-2'}}</p>
+                <div class="quantity">
+                  <div (click)="plusss(item)">
+                    <span class="minus"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                  </div>
+                  <!-- <p>{{getthisCounter(item)}}</p> -->
+                  <p>{{item.counter}}</p>
+    
+                  <div (click)="minusss(item)">
+                    <span class="plus" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                  </div>
+                </div>
+                <ion-button small class="conpare_btn" (click)="addToCompare(item)" *ngIf="sections =='0'"><img src="assets/compare_btn.png"></ion-button> 
+                </ion-col>
+                <!-- <ion-col size="2" class="ion-no-padding cardAdd" (click)="addToCompare(item)">
+                  <img src="assets/cart.png" style="padding-top: 5px;">
+                  <ion-button small><img src="assets/add-cart.png"> Add</ion-button> 
+                </ion-col> -->
+            </ion-row>
+          </ion-grid>
+          </ion-label>
+        
+        </ion-item>
+
+      <!-- </div> -->
+    </div>
+  </ion-list>
+</div>
+</ion-content>
+
+<div [ngSwitch]="drinks">
+<ion-footer class="ion-no-border" *ngSwitchCase="'liquor'">
+  <div class="footer_content">
+    <div class="footer_item_start">
+      <img src="../../assets/whiskey_peg.svg">
+      <div class="item_total">
+        <p><small>{{addToCart.carts.length}} ITEM IN CART</small></p>
+        <p class="price_end"><span class="currency">$</span> {{final_cart_value | number : '.2-2'}}</p>
+        <p><small>plus taxes*</small></p>
+      </div>
+    </div>
+    <div class="footer_item_end mw_230">
+      <div class="reserve_btn"  (click)="gotoCart()">
+        <p>View Cart</p>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-footer>
+
+
+
+<!-- <ion-footer class="ion-no-border" *ngSwitchCase="'food'">
+  <div class="footer_content">
+    <div class="footer_item_start">
+      <img src="assets/cart.png">
+      <div class="item_total">
+        <p><small>{{addToFoodCart.foodCart.length}} ITEM IN CART</small></p>
+        <p class="price_end">₹ {{foodCartValue | number : '.2-2'}}</p>
+        <p><small>plus taxes*</small></p>
+      </div>
+    </div>
+    <div class="footer_item_end mw_230" (click)="gotoFoodCart()">
+      <p>View Cart</p>
+      <img src="assets/arrow-right.png">
+    </div>
+  </div>
+</ion-footer> -->
+<ion-footer class="ion-no-border" *ngSwitchCase="'food'">
+  <div class="footer_content">
+    <div class="footer_item_start">
+      <img src="../../assets/food.png">
+      <div class="item_total">
+        <p><small>{{addToCart.carts.length}} ITEM IN CART</small></p>
+        <p class="price_end"><span class="currency">$</span> {{final_cart_value | number : '.2-2'}}</p>
+        <p><small>plus taxes*</small></p>
+      </div>
+    </div>
+    <div class="footer_item_end mw_230">
+      <div class="reserve_btn" (click)="gotoCart()">
+        <p>View Cart</p>
+        <img src="assets/arrow-right.png">
+      </div>
+    </div>
+  </div>
+</ion-footer>
+<ion-footer class="ion-no-border" *ngSwitchCase="'soft-beverage'">
+  <div class="footer_content">
+    <div class="footer_item_start">
+      <img src="../../assets/lemonade.png">
+      <div class="item_total">
+        <p><small>{{addToCart.carts.length}} ITEM IN CART</small></p>
+        <p class="price_end"><span class="currency">$</span> {{final_cart_value | number : '.2-2'}}</p>
+        <p><small>plus taxes*</small></p>
+      </div>
+    </div>
+    <div class="footer_item_end mw_230">
+      <div class="reserve_btn" (click)="gotoCart()">
+        <p>View Cart</p>
+        <img src="assets/arrow-right.png">
+      </div>
+    </div>
+  </div>
+</ion-footer>
+<ion-footer class="ion-no-border" *ngSwitchCase="'combo'">
+  <div class="footer_content">
+    <div class="footer_item_start">
+      <img src="../../assets/combo_offer.png">
+      <div class="item_total">
+        <p><small>{{addToCart.carts.length}} ITEM IN CART</small></p>
+        <p class="price_end"><span class="currency">$</span> {{final_cart_value | number : '.2-2'}}</p>
+        <p><small>plus taxes*</small></p>
+      </div>
+    </div>
+    <div class="footer_item_end mw_230">
+      <div class="reserve_btn" (click)="gotoCart()">
+        <p>View Cart</p>
+        <img src="assets/arrow-right.png">
+      </div>
+    </div>
+  </div>
+</ion-footer>
+</div>
+

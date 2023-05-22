@@ -1,0 +1,85 @@
+ion-content {
+    --background: #ffffff;
+    --padding-top: 35px;
+
+    .ion-header {
+		display: flex;
+		padding: 0 30px;
+		margin: 65px auto 0;
+		align-items:center;
+		justify-content: space-between;
+
+		.logo {
+			display: block;
+		}
+		.back_button {
+			display: flex;
+			width: 36px;
+			height: 36px;
+			border-radius: 18px;
+			background-color: #202c40;
+			align-items:center;
+			justify-content: center;
+		}
+		.cross_button {
+			display: flex;
+			width: 36px;
+			height: 36px;
+			border-radius: 18px;
+			background-color: #202c40;
+			align-items:center;
+			justify-content: center;
+		}
+		h4 {
+			margin: 0;
+			color: #fff;
+			font-size: 18px;
+		}
+	}
+    .event_form {
+        padding: 0 20px;
+        ion-item {
+            --background: transparent;
+            --border-width: 0;
+            --min-height: 1px;
+            --padding-start: 0;
+            --padding-end: 0;
+            --inner-padding-end: 0;
+            --highlight-color-focused: transparent;
+            margin-bottom: 5px;
+
+            ion-label {
+                font-size: 15px;
+                color: #000000;
+                font-weight: 600;
+                transform: translateY(0) scale(1);
+                // margin-bottom: 10px;
+                margin: 0;
+                padding: 12px;
+                ion-icon{
+                    margin-right: 8px;
+                    vertical-align: sub;
+                    font-size:18px;
+
+                }
+            }
+            ion-input {
+                font-size: 15px;
+                width: 100%;
+                min-height: 45px;
+                border-radius: 10px;
+                background-color: rgba(231,231,231,0.48);
+                border: 1px solid rgba(255,212,212,0.5);
+                line-height: 45px;
+                --padding-top: 0;
+                --padding-start: 10px;
+                --padding-end: 10px;
+                --padding-bottom: 0;
+            }
+        }
+        ion-button {
+            margin: 35px auto 15px;
+            max-width: 170px;
+        }
+    }
+}

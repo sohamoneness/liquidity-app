@@ -1,0 +1,99 @@
+<ion-content>
+  <img class="success_icon" src="assets/success-icon.svg" />
+  <h2>Hurrah!</h2>
+  <h6>Your Order has been Successfully Placed</h6>
+
+  <hr/>
+
+  <h4>Order For</h4>
+  <p><span>Name:</span> {{user_name}}</p>
+  <p><span>Phone:</span> {{mobile}}</p>
+  
+  <h4>Order Details</h4>
+  <p *ngIf="OrderDetails !== ''"><span>Order ID:</span> {{OrderDetails.unique_id}}</p>
+  <p *ngIf="this.OrderDetails.payment_type == '1'"><span>Transation Reference:</span> Online</p>
+  <p *ngIf="this.OrderDetails.payment_type == '2'"><span>Transation Reference:</span> Wallet</p>
+
+  <h4>Product</h4>
+  <div class="ptoduct-item" *ngFor="let item of OrderDetails.products ; let i = index">
+    <h5 class="m-0">{{item.product_name}}</h5>
+    <p><span class="short_count ion-text-left">{{item.quantity}} x $ {{item.price | number : '.2-2'}}</span></p>
+  </div>
+  
+  <!-- <ion-item *ngFor="let item of OrderDetails.products ; let i = index" ion-no-border class="ptoduct-item">
+    
+      <ion-row class="ion-align-items-center">
+        <ion-col size="7">
+          <div class="drink_content">
+            <h3 class="m-0">{{item.product_name}}</h3>
+          </div>
+        </ion-col>
+        <ion-col size="5" class="ion-no-padding">
+          <div class="drink_content">
+            <h3 class="m-0 ion-text-right"></h3>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="7">
+          <div class="drink_content drink_content--mod">
+            <p class="short_count ion-text-left">{{item.quantity}} x $ {{item.price | number : '.2-2'}}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+  </ion-item> -->
+  <!-- <ion-grid no-padding *ngIf="is_vault !== '1'">
+      <ion-row>
+          <ion-col size="6"><p><span>Date:</span> {{OrderDetails.order_date}}</p></ion-col>
+          <ion-col size="6"><p><span>Time:</span> {{OrderDetails.order_time}}</p></ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col size="6"><p><span>Scheduled Date:</span> {{OrderDetails.order_date}}</p></ion-col>
+          <ion-col size="6"><p><span>Time:</span> {{OrderDetails.order_time}}</p></ion-col>
+      </ion-row>
+  </ion-grid> -->
+
+  <ion-grid class="cart_prodetails">
+    <ion-row *ngIf="OrderDetails !== ''">
+      <ion-col size="6">
+        <span>Total Amount:</span>
+      </ion-col>
+      <ion-col size="6" class="ion-text-end">
+        <span class="price"><span class="currency">$</span> {{OrderDetails.total_amount | number : '.2-2'}}</span>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="OrderDetails !== ''">
+      <ion-col size="6">
+        <span>Tax and Charges:</span>
+      </ion-col>
+      <ion-col size="6" class="ion-text-end">
+        <span class="price"><span class="currency">$</span> {{OrderDetails.tax_amount | number : '.2-2'}}</span>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="OrderDetails !== ''">
+      <ion-col size="6">
+        <span>Total and Paid:</span>
+      </ion-col>
+      <ion-col size="6" class="ion-text-end">
+        <span class="price"><span class="currency">$</span> {{OrderDetails.total_amount | number : '.2-2'}}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <h6 class="grey">Please note your liquidity order code</h6>
+  <div class="code_area" >
+    <div>liquidity order code</div>
+    <span *ngIf="OrderDetails !== ''">{{OrderDetails.unique_id}}</span>
+  </div>
+  <!-- <p class="ion-text-center"><span>Total Reservation for</span> 2</p> 
+  <p class="ion-text-center"><a  class="place_order_button" (click)="gotoHome()">Place a new order</a></p>-->
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div class="footer_content">
+    <div class="footer_item_end" (click)="gotoHome()">
+      <p>Place a new order</p>
+      <img src="assets/arrow-right.png">
+    </div>
+  </div>
+  </ion-footer>

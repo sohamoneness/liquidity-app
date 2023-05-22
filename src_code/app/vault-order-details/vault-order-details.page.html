@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Order Summary</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-item *ngIf="shop_details">
+    <ion-avatar slot="start">
+      <img src="{{shop_details.image}}" />
+    </ion-avatar>
+    <ion-label *ngIf="shop_details">
+      <h5>{{shop_details.name}}</h5>
+      {{shop_details.address}}
+    </ion-label>
+  </ion-item> -->
+
+  <div class="title_bar">
+		<h2 class="title">Order Details</h2>
+  </div>
+  
+  <div class="order-summary" *ngIf="all_order">
+    <!-- <p><span>Product Name:</span> </p>
+    <p><span>Order ID:</span> </p>
+    <p><span>Transation Reference:</span> wallet</p> -->
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col size="6"><p><span>Product Name:</span></p></ion-col>
+        <ion-col size="6" class="ion-text-right"><p>{{all_order.product_name}}</p></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"><p><span>Order ID:</span></p></ion-col>
+        <ion-col size="6" class="ion-text-right"><p>{{all_order.order_id}}</p></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"><p><span>Transation Reference:</span></p></ion-col>
+        <ion-col size="6" class="ion-text-right"><p>Wallet</p></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"><p><span>Date:</span></p></ion-col>
+        <ion-col size="6" class="ion-text-right"><p>{{all_order.created_at}}</p></ion-col>
+        <!-- <ion-col size="6"><p><span>Time:</span> 02:24 PM</p></ion-col> -->
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"><p><span>Scheduled Date:</span></p></ion-col>
+        <ion-col size="6" class="ion-text-right"><p>{{all_order.order_date}}</p></ion-col>
+        <!-- <ion-col size="6"><p><span>Time:</span> 02:24 PM</p></ion-col> -->
+      </ion-row>
+    </ion-grid>
+    <hr/>
+    <!-- <p><span>Paid Using:</span> wallet</p>
+    <hr/> -->
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col size="6"><p><span>liquidity order code</span></p></ion-col>
+        <ion-col size="6" class="ion-text-right"><p>{{all_order.unique_id}}</p></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="title_bar" *ngIf="all_liquor_order_summary!=''">
+		<h2 class="title">Redeemed Summary</h2>
+  </div>
+  
+  <div class="order-summary" >
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col size="7"><h6 class="title">Outlet</h6></ion-col>
+        <ion-col size="2" class="ion-text-center"><h6 class="title text-center">Qty</h6></ion-col>
+        <ion-col size="3" class="ion-text-right"><h6 class="title text-center">Date</h6></ion-col>
+      </ion-row>
+      <ion-row *ngFor="let item of all_liquor_order_summary">
+        <ion-col size="7">
+          <h6>{{item.shop_name}}</h6>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center">
+          <p><span>{{item.quantiy}}</span></p>
+        </ion-col>
+        <ion-col size="3" class="ion-text-right">
+          <p><span>{{item.redeem_date}}</span></p>
+        </ion-col>
+      </ion-row>
+      <hr/>
+      <ion-row>
+        <ion-col size="8">
+          <h6>Total Quantity</h6>
+        </ion-col>
+        <ion-col size="4" class="ion-text-right">
+          <h6>{{all_order.quantity}} unit</h6>
+        </ion-col>
+        <ion-col size="8">
+          <h6>Total Quantity Used</h6>
+        </ion-col>
+        <ion-col size="4" class="ion-text-right">
+          <h6>{{all_order.total_quantity_used}} unit</h6>
+        </ion-col>
+        <ion-col size="8">
+          <p><span>Remainning Quantity</span></p>
+        </ion-col>
+        <ion-col size="4" class="ion-text-right">
+          <p><span>{{all_order.balance_quantity}} unit</span></p>
+        </ion-col>
+      </ion-row>
+      <hr/>
+      <ion-row>
+        <ion-col size="8">
+          <h6>Total Amount</h6>
+        </ion-col>
+        <ion-col size="4" class="ion-text-right">
+          <h6><span class="currency">$</span> {{all_order.total_amount}}</h6>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="title_bar">
+		<h2 class="title">Contact Outlet</h2>
+  </div>
+  
+  <!-- <div class="order-summary" *ngIf="shop_details"> 
+    <p><ion-icon name="call-sharp"></ion-icon> {{shop_details.phone}}</p>
+    <hr/> -->
+    <!-- <p><ion-icon name="call-sharp"></ion-icon> +91 8978975465</p> -->
+  <!-- </div> -->
+
+</ion-content>

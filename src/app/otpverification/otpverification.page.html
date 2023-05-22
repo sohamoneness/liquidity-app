@@ -1,0 +1,33 @@
+
+<!-- <ion-content class="ion-padding">
+	<div>
+		<p class="otp_title">Enter the OTP your received</p>
+		<div class="otp_wrapper">
+			<ion-input placeholder="Enter Your OTP" required="true" maxLength="6" [(ngModel)]="otp"></ion-input>
+		</div>
+		<p class="otp_content">We will never share your number or spam you!</p>
+		<ion-button class="btn-continue" shape="round" routerLink="/login" routerDirection="forward" (click)="verify_otp()">Submit</ion-button>
+		<p class="sign_in" (click)="send_otp()">Didn’t receive the OTP? <span>Send Again</span></p>
+	</div>
+</ion-content> -->
+
+<ion-header>
+	<ion-toolbar>
+		<ion-title>OTP</ion-title>
+	</ion-toolbar>
+  </ion-header>
+
+<ion-content>
+	<div class="login_section">
+		<div class="otp_section">
+			<img src="../../assets/otp-icon.svg">
+			<h3>Verification Code</h3>
+			<p class="otp_title">We have sent verification code to<br/>your mobile number.</p>
+			<ion-input type="tel" placeholder="Enter Your OTP" required="true" maxlength="6" maxlength="6" [(ngModel)]="otp" class="custom-class"></ion-input>
+			<ion-button class="btn-continue" shape="round" routerDirection="forward" (click)="submitOtpVerification()">Submit</ion-button>
+			<p class="otp_content">We will never share your number or spam you!</p>
+		</div>
+		<p class="sign_in" (click)="resendOtp()">Didn’t receive the OTP? <span>Send Again</span></p>
+	</div>
+	
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref="/myprofile"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+	<!-- <div class="logo_wrap">
+		<img src="../../assets/logo.png">
+	</div> -->
+	<div class="form_wrap pt-25">
+		<ion-input type="text" placeholder="Full Name" [(ngModel)]="user_name"></ion-input>
+		<ion-input type="Number" placeholder="Your Mobile Number"  [(ngModel)]="user_mobile"></ion-input>
+    <ion-input type="email" placeholder="Your Email Id" [(ngModel)]="user_mail" readonly></ion-input>
+		<!-- <ion-label> {{this.user_mail}}</ion-label> -->
+    <ion-label>Choose Gender*</ion-label>
+    <ion-select value="kolkata" [(ngModel)]="genderId" multiple="false" (ionChange)="optionsgender();">
+    <ion-select-option *ngFor="let item of gender" [value]="item.id" placeholder="Please select Gender" selected value="kolkata">{{item.name}}</ion-select-option>
+    </ion-select>
+    <ion-label>Choose Date of Birth</ion-label>
+    <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="date" (ionChange)="setDate()" placeholder="Select Date of Birth"></ion-datetime>
+		<!-- <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+		<ion-input type="password" placeholder="Confirm Password"></ion-input>
+		<p class="terms">By Signing up you agree to our <span>Terms of Use</span> & <span>Privacy Policy</span>.</p>
+        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-label>I confirm, I have reached the eligible age as per State laws for purchase & consumption of alcoholic beverages.</ion-label> -->
+		<ion-button class="btn-submit" expand="block" shape="round" (click)="submitValues()">Update Profile</ion-button>
+		<!-- <p class="sign_in">Have an account? <span routerLink="/login" routerDirection="forward">Sign In</span></p> -->
+
+	</div>
+</ion-content>

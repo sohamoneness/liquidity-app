@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+  		<ion-back-button icon="arrow-back-outline" defaultHref=""></ion-back-button>
+  	</ion-buttons>
+    <ion-title>Compare & Reserve</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="segment_2">
+		<!-- <div>
+		  <ion-segment class="ion-no-padding" scrollable>
+		    <ion-segment-button value="trend-setters">
+		      <ion-button shape="round">Trend Setters</ion-button>
+		    </ion-segment-button>
+		    <ion-segment-button value="wolf-pack">
+		      <ion-button shape="round">3 star Hotel</ion-button>
+		    </ion-segment-button>
+		    <ion-segment-button value="imperial">
+		      <ion-button shape="round">5 star hotel</ion-button>
+		    </ion-segment-button>
+			<ion-segment-button value="imperial">
+				<ion-button shape="round">Premium Night Club</ion-button>
+			  </ion-segment-button>
+		  </ion-segment>
+		</div> -->
+
+		<div>
+		  <ion-list class="drink_items">
+		    <ion-item>
+			    <ion-grid>
+			      	<ion-row class="ion-align-items-center">
+			    		<ion-col size="7">
+			    			<div class="drink_content">
+			    				<p class="short_count ion-text-left"><strong>ITEMS</strong></p>
+			    			</div>
+					    </ion-col>
+					    <ion-col size="5" class="ion-no-padding">
+					    	<div class="drink_content">
+					      		<p class="short_count ion-text-right"><strong>UNITS</strong></p>
+					      	</div>
+					    </ion-col>
+					</ion-row>
+			    </ion-grid>
+			</ion-item>
+			<ion-item *ngFor="let cartItem of cart_items ; let i = index">
+			    <ion-grid>
+			      	<ion-row class="ion-align-items-center">
+			    		<ion-col size="7">
+			    			<div class="drink_content">
+			    				<h3 class="m-0">{{cartItem.product_name}}</h3>
+
+			    			</div>
+					    </ion-col>
+					    <ion-col size="5" class="ion-no-padding ion-text-right">
+					    	<div class="drink_content drink_content--mod">
+					    			<button (click)="removeItem(i,cartItem)"><img src="assets/remove.png"></button>
+					      		<p class="short_count iion-text-right">{{cartItem.quantity}}</p>
+					      	</div>
+					    </ion-col>
+					</ion-row>
+			    </ion-grid>
+			</ion-item>
+			
+			<ion-item>
+			    <ion-grid>
+			      	<ion-row class="ion-align-items-center">
+			    		<ion-col size="7">
+			    			<div class="drink_content">
+			    				<h3 class="m-0">Grand Total for the Category</h3>
+			    			</div>
+					    </ion-col>
+					    <ion-col size="5" class="ion-no-padding">
+					    	<div class="drink_content">
+					      		<h3 class="m-0 ion-text-right">$ {{cartPrice}}</h3>
+					      	</div>
+					    </ion-col>
+					</ion-row>
+			    </ion-grid>
+			</ion-item>
+		  </ion-list>
+		</div>
+	</div>
+	<div class="select_form">
+		  <ion-grid>
+			  <ion-radio-group value="booking" (ionChange)="radioGroupChange($event)">
+				  <ion-row>
+					  <ion-col size="4" *ngIf="wallet_status==2">
+						  <ion-item>
+							  <ion-label>Test Funds</ion-label>
+							  <ion-radio slot="start" value="wallet"></ion-radio>
+						  </ion-item>
+					  </ion-col>
+					  <ion-col size="6">
+						  <ion-item>
+							  <ion-label>Online Payment</ion-label>
+							  <ion-radio slot="start" value="online"></ion-radio>
+						  </ion-item>
+					  </ion-col>
+				  </ion-row>
+			  </ion-radio-group>
+			</ion-grid>
+		</div>
+		<div *ngIf="wallet_status==1">
+		  <h4 class="note-text">Your test fund balance is low.Please use online payment to complete the transactions</h4>
+	  </div>
+	<div class="title_bar">
+		<h2 class="title">Outlets in the selected category</h2>
+	</div>
+	<div class="slide_item slide_item--mod-2">
+		<ion-grid>
+		  	<ion-row>
+		    	<ion-col size="6" *ngFor="let outlet of outletDetails">
+		      		<div class="slide_box">
+			          	<span class="rating">3.4</span>
+			            <div class="img_wrap" style="background: url({{outlet.image}}) no-repeat center; background-size: cover;"></div>
+			            <div class="box_content">
+			            	<h2>{{outlet.name}}</h2>
+				            <p>{{outlet.address}}</p>
+			            </div>
+			        </div>
+		    	</ion-col>
+		  	</ion-row>
+		</ion-grid>
+	</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div class="footer_content">
+  	<div class="footer_item_start">
+  		<img src="assets/cart.png">
+  		<div class="item_total">
+  			<p><small>{{cart_item}} ITEM IN CART</small></p>
+  			<p class="price_end">$ {{cartPrice}}</p>
+  			<p><small>plus taxes*</small></p>
+  		</div>
+  	</div>
+  	<div class="footer_item_end mw_230" (click)="pay()">
+  		<p>Checkout</p>
+  		<img src="assets/arrow-right.png">
+  	</div>
+  </div>
+</ion-footer>

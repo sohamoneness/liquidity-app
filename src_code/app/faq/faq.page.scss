@@ -1,0 +1,47 @@
+ion-content {
+
+	.terms-title{
+		background-color:#ffffff;
+		padding:20px 20px 0 20px;
+		h5{
+			font-size:14px;
+			font-weight:bold;
+			text-transform: uppercase;
+		}
+    }
+    .bodycontent{
+        padding: 0 20px 20px 20px;
+        ul{
+            padding: 0;
+            li{
+                font-size:13px;
+                color:#000000;
+                line-height:20px;
+                margin-bottom: 10px;
+                list-style: decimal;
+                display: block;
+                b{
+                    display: block;
+                    margin-bottom: 8px;
+                }
+                .table{
+                    width: 100%;
+                    border: 1px solid #efefef;
+                    margin: 15px 0;
+                    tr th{
+                        padding: 8px;
+                        border: 1px solid #efefef;
+                        vertical-align: middle;
+                    }
+                    tr td{
+                        padding: 8px;
+                        border: 1px solid #efefef;
+                        vertical-align: middle;
+                    }
+
+                }
+            }
+           
+        }
+    }		
+}

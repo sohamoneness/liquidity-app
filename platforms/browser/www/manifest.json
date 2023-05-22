@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Liquidity",
+  "short_name": "Liquidity",
+  "version": "com.app.liquidityCanada",
+  "description": "An awesome Ionic/Cordova app.",
+  "author": "Ionic Framework Team",
+  "icons": [],
+  "start_url": "index.html"
+}

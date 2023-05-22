@@ -1,0 +1,31 @@
+<ion-content padding>
+	<div class="login_section">
+		<div class="login_block">
+			<div class="logo_wrap">
+				<img src="../../assets/logo.png">
+			</div>
+			<div class="form_wrap">
+				<ion-input type="text" placeholder="Full Name" [(ngModel)]="name"></ion-input>
+				<ion-input type="email" placeholder="Email Id" [(ngModel)]="mail"></ion-input>
+        <!-- <ion-list> -->
+          <ion-radio-group [(ngModel)]="gender">
+            <ion-list-header>
+              <ion-label>Gender</ion-label>
+            </ion-list-header>
+        
+            <ion-item>
+              <ion-label>Male</ion-label>
+              <ion-radio slot="start" value="male"></ion-radio>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label>Female</ion-label>
+              <ion-radio slot="start" value="female"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        <!-- </ion-list> -->
+			  <ion-button class="btn-submit" expand="block" shape="round" (click)="submitRegistration()">SIGN UP</ion-button>
+			</div>
+		</div>
+	</div>
+</ion-content>

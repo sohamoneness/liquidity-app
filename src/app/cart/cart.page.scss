@@ -1,0 +1,154 @@
+.drink_items {
+
+	&.padding {
+		padding: 5px 15px;
+	}
+	ion-item {
+		--background: #ffffff;
+	}
+
+	.drink_content.drink_content--mod {
+		justify-content: flex-start;
+	}
+	.drink_content.content_right {
+		justify-content: flex-end;	
+
+		button {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+.drink_items {
+	padding: 0 0 0 20px;
+
+	ion-item {
+		--min-height: 40px;
+		color: #808080;
+		font-size: 12px;
+		letter-spacing: 1px;
+		font-weight: 600;
+		--padding-top: 2px;
+		--padding-bottom: 2px;
+		--inner-border-width: 0;
+		border-bottom: 1px solid #f8f8f8;
+
+		ion-thumbnail {
+			background: #f7f7f7;
+			border-radius: 4px;
+			img {
+				object-fit: scale-down;
+			}
+		}
+
+		ion-label {
+			margin: 0;
+			font-family: 'Outfit', sans-serif;
+			white-space: normal;
+			color: #000;
+			font-weight: 600;
+
+			h5 {
+				font-size: 16px;
+				letter-spacing: 0;
+				font-weight: 600;
+			}
+			p {
+				margin-top: 2px;
+				font-size: 14px;
+			}
+		}
+		ion-note {
+			padding: 0;
+			color: #808080;
+			font-size: 16px;
+			letter-spacing: 1px;
+			font-weight: 600;
+			display: flex;
+			align-items: flex-end;
+			align-self: center;
+			justify-content: flex-end;
+			flex-direction: column;
+
+			h3.price {
+				font-size: 16px;
+			}
+		}
+		button {
+			height: 20px;
+			background: transparent;
+			padding: 0;
+			margin-top: 2px;
+
+			img {
+				height: 100%;
+				width: auto;
+			}
+		}
+		h3 {
+			color: #33373d;
+			font-size: 13px;
+			letter-spacing: 0.03px;
+			font-weight: 600;
+		}
+	}
+}
+
+
+
+.select_form {
+	ion-item {
+		--background: #ffffff;
+		color: #000;
+		--min-height: 20px;
+		--inner-border-width: 0;
+		font-size: 14px;
+		--padding-start: 0;
+		
+		ion-label {
+			margin: 0;
+			font-size: 14px;
+		}
+
+		&.circle {
+			--border-radius: 20px;
+			--border-width: 2px;
+			--border-color: #dcc88d;
+			--inner-border-width: 0;
+			--padding-start: 10px;
+		}
+
+		ion-radio {
+			margin-right: 10px;
+
+			.radio-icon {
+				border-color: #000;
+
+				.radio-inner {
+					background: #dcc88d;
+				}
+			}
+			--color-checked: #dcc88d;
+		}
+
+		ion-avatar {
+			--border-radius: 0;
+			width: 16px;
+			height: 16px;
+			margin: 0 10px 0 0;
+		}
+
+		ion-input {
+			--padding-top: 3px;
+			--padding-bottom: 3px;
+		}
+	}
+}
+ion-footer {
+	.footer_content {
+		.footer_item_end {
+		    justify-content: center;
+		}
+	}
+}

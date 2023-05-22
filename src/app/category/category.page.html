@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="chevron-back-outline" text="" defaultHref="/vaulthome"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Category Outlets</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides [options]="slideOpts1" class="sec1">
+    <ion-slide>
+      <ion-button shape="round">Trend Setter</ion-button>
+    </ion-slide>
+    <ion-slide>
+      <ion-button shape="round">3 Star Hotel</ion-button>
+    </ion-slide>
+    <ion-slide>
+      <ion-button shape="round">4 Star Hotel</ion-button>
+    </ion-slide>
+    <ion-slide>
+      <ion-button shape="round">Night Club</ion-button>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="store_list">
+    <div class="store_item" *ngFor="let item of shops" (click)="gotoshopproduct(item.id,item)">
+      <figure>
+        <ion-img src="{{item.image}}"></ion-img>
+      </figure>
+      <figcaption>
+        <div class="outlet_distance">
+          <h4 class="shopTitle"><strong>{{item.name}}</strong></h4>
+          <p>{{item.address}}</p>
+        </div>
+        <div class="distance_sec">
+          <small><ion-icon name="star"></ion-icon> {{item.rating}}</small>
+        </div>
+      </figcaption>
+    </div>
+  </div>
+
+</ion-content>

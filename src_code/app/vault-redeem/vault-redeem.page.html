@@ -1,0 +1,184 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button icon="arrow-back-outline" defaultHref=""></ion-back-button>
+  </ion-buttons>
+    <!-- <ion-title>SELECTED LOCATION</ion-title> -->
+    <ion-label>SELECTED LOCATION</ion-label>
+    <ion-item>
+    <ion-select value="kolkata">
+      <ion-select-option selected value="kolkata">kolkata</ion-select-option>
+      <ion-select-option value="mumbai">mumbai</ion-select-option>
+      <ion-select-option value="bangalore">bangalore</ion-select-option>
+      <ion-select-option value="delhi">delhi</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <!-- <ion-icon slot="end" class="search_item" name="search-outline"></ion-icon> -->
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="title_bar">
+    <h2 class="title">Orders</h2>
+  </div>
+  <div class="row">
+    <ion-list class="drink_items">
+      <ion-item>
+        <p>{{orderDetails.product_name}}</p>
+      </ion-item>
+      <ion-item>
+        <p>OrderId : {{orderDetails.unique_id}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-grid class="ion-no-padding">
+          <ion-row class="ion-align-items-center ion-no-padding">
+            <ion-col size="9" class="ion-no-padding"><p>Select the number of Units you wish to redeem</p></ion-col>
+          <ion-col size="3">
+            <div class="quantity">
+							<div (click)="minusss()">
+								<span class="minus" >-</span>
+              </div>
+							<!-- <p>{{getthisCounter(item)}}</p> -->
+							<p>{{itemCount}}</p>
+
+							
+              <div (click)="plusss()">
+								<span class="plus" >+</span>
+							</div>
+						</div>
+          </ion-col>
+        </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="title_bar">
+    <h2 class="title">Select the outlet to redeem</h2>
+  </div>
+  <div class="row">
+    <!-- <ion-list class="drink_items drink_items_mod">
+      <ion-item>
+        <ion-grid *ngFor="let outlet of orderDetails.vault_shops">
+          <ion-row class="ion-align-items-center">
+            <img src="{{outlet.image}}">
+            <input type="checkbox" value="{{outlet.id}}" multiple="false"  (change)="selectedOutlet($event,outlet)">
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list> -->
+    <div class="slide_item">
+      <ion-slides pager="false" [options]="slideOpts">
+        <ion-slide *ngFor="let outlet of orderDetails.vault_shops">
+          <div class="slide_box checklist">
+            <label for="{{outlet.id}}">
+              <input type="radio" value="" name="select_resturant" id="{{outlet.id}}" value="{{outlet.id}}" multiple="false"  (change)="selectedOutlet($event,outlet)">
+              <span>
+                <span class="rating">{{outlet.rating}}</span>
+                <div class="img_wrap" style="background: url({{outlet.image}}) no-repeat center; background-size: cover;"></div>
+                <div class="box_content">
+                  <h2>{{outlet.name}}</h2>
+                  <p>{{outlet.address}}</p>
+                </div>
+              </span>
+            </label>
+          </div>
+        </ion-slide>
+
+       
+
+      </ion-slides> 
+    </div>
+  </div>
+
+  <div class="title_bar">
+    <h2 class="title">Booking Details</h2>
+  </div>
+  <div class="row">
+    <ion-list class="drink_items drink_items_mod">
+      <!-- <ion-item>
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-radio-group>
+              <ion-item>
+                <ion-label>Myself</ion-label>
+                <ion-radio slot="start" value="biff" checked></ion-radio>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Someone else</ion-label>
+                <ion-radio slot="start" value="griff"></ion-radio>
+              </ion-item>
+            </ion-radio-group>   
+          </ion-row>
+        </ion-grid>
+      </ion-item> -->
+      <ion-item>
+        <ion-grid>
+          <!-- <ion-row class="ion-align-items-center">
+            <ion-input type="text" placeholder="+91 " #mobile="ngModel" [(ngModel)]="bookingData.mobile" name="mobile"></ion-input>
+            <ion-input placeholder="youremail@email.com" type="email" #email="ngModel" [(ngModel)]="bookingData.email" name="email"></ion-input>
+          </ion-row>
+          <ion-row>
+            <ion-input type="text" placeholder="date" #date="ngModel" [(ngModel)]="bookingData.date" name="text"></ion-input>
+            <ion-input placeholder="time" type="text" #time="ngModel" [(ngModel)]="bookingData.time" name="text"></ion-input>
+          </ion-row> -->
+
+
+          <ion-row>
+            <!-- <ion-col size="6">
+               <ion-item class="circle placeholder_border">
+                <ion-label>+91</ion-label>
+                <ion-input placeholder="mobile" [(ngModel)]="mobile"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item class="circle placeholder_border">
+                 <ion-input placeholder="youremail@email.com " [(ngModel)]="mail"></ion-input>
+               </ion-item>
+            </ion-col> -->
+            <ion-col size="6">
+               <ion-item class="circle placeholder_border">
+                <ion-thumbnail slot="start">
+                  <img src="assets/calender.png">
+                </ion-thumbnail>
+                <!-- <ion-label>Order Date*</ion-label> -->
+                <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="date" placeholder="Date" max="{{scheduled_date}}" min="{{today_date}}"></ion-datetime>
+                 <!-- <ion-input placeholder="14/02/2018"></ion-input> -->
+               </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item class="circle placeholder_border">
+                <ion-thumbnail slot="start">
+                  <img src="assets/clock.png">
+                </ion-thumbnail>
+                <!-- <ion-label>Time</ion-label> -->
+                <ion-datetime displayFormat="hh-mm-A" [(ngModel)]="time" placeholder="Time"></ion-datetime>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div class="footer_content">
+    <div class="footer_item_start">
+      <img src="assets/cart.png">
+      <div class="item_total">
+        <p><small>{{itemCount}} ITEM IN CART</small></p>
+        <!-- <p class="price_end">₹ {{cartPrice}}.00</p> -->
+        <p><small>30ounce per unit</small></p>
+      </div>
+    </div>
+    <div class="footer_item_end mw_230" (click)="confirmBooking()">
+      <p>Confirm Booking</p>
+      <img src="assets/arrow-right.png">
+    </div>
+  </div>
+</ion-footer>
+
+<!-- http://localhost:8100/vault-redeem/1611398447292 -->

@@ -1,0 +1,34 @@
+ion-content {
+
+	.terms_of_use{
+		background-color:#ffffff;
+		padding:15px;
+		h2{
+			font-size:14px;
+			font-weight:bold;
+			text-transform: uppercase;
+		}
+		p{
+			font-size:13px;
+			color:#000000;
+			line-height:20px;
+            margin-bottom: 10px;
+		}
+		.sub_para{
+			font-size:13px;
+			line-height:20px;
+			padding-left:20px;
+			margin-bottom: 10px;
+            p{
+                font-size:13px;
+                color:#000000;
+                line-height:20px;
+                margin-bottom: 10px;
+            }
+			ul{
+				list-style-type: circle;
+				padding-left:15px;
+			}
+		}
+	}
+}

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+  		<ion-back-button icon="arrow-back-outline" defaultHref="/homenew"></ion-back-button>
+  	</ion-buttons>
+    <!-- <ion-title>SELECTED LOCATION</ion-title> -->
+    <!-- <ion-label>SELECTED LOCATION</ion-label>
+    <ion-item>
+    <ion-select value="kolkata">
+      <ion-select-option selected value="kolkata">kolkata</ion-select-option>
+      <ion-select-option value="mumbai">Mumbai</ion-select-option>
+      
+    </ion-select>
+  </ion-item> -->
+  <!-- <ion-icon slot="end" class="search_item" name="search-outline" (click)="search()"></ion-icon> -->
+  <ion-icon slot="end" class="search_item" name="cart-outline" (click)="cart()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+	<div class="resturant_img_wrap" *ngIf="shopDetails">
+		<img src="{{shopDetails.image}}">
+		<div class="rating_number">
+			<p>{{shopDetails.rating}}</p>
+			<ion-icon slot="end" class="star-icon" name="star"></ion-icon>
+		</div>
+	</div>
+	<div class="resturant_title_wrap" *ngIf="shopDetails">
+		<h1 class="heading">{{shopDetails.name}}</h1>
+		<p class="content">{{shopDetails.address}}</p>
+		<div class="br-1"></div>
+		<div class="btn_group">
+			<ion-button class="btn-outlet" (click)="callNow(shopDetails.phone)">CONTACT OUTLET</ion-button>
+			<ion-button class="btn-outlet" (click)="callHousingRules()">VIEW HOUSE RULES</ion-button>
+		</div>
+	</div>
+
+	<div class="resturant_title_wrap mt-24">
+		<div class="rebate_tag">{{shopDetails.offer_rate}}% OFF</div>
+		<p class="content-2">{{shopDetails.offer_text}}</p>
+		<p class="content-2">{{shopDetails.house_rules}}</p>
+		<p class="content content-mod">Auto applied during checkout</p>
+	</div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div class="footer_content">
+  	<div class="footer_item_end" (click)="gotoOutLet()">
+  		<p>VIEW ONLINE ORDERING MENU</p>
+  		<img src="assets/arrow-right.png">
+  	</div>
+  </div>
+</ion-footer>

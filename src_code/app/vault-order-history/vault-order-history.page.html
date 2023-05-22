@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Vault Order History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="title_bar">
+    <h2 class="title">List Of Orders</h2>
+  </div>
+  <div class="order_list">
+    <ion-item *ngFor="let item of orderDetails">
+      <ion-thumbnail slot="start">
+        <img src="{{item.product_image}}">
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{item.product_name}}</h3>
+        <p>Order ID: <span class="bold_count">{{item.unique_id}}</span></p>
+        <p>Order Date: <span class="bold_count">{{item.order_date}}</span></p>
+        <div class="btn_grp">
+          <ion-button fill="outline" (click)="orderDetailss(item)">ORDER DETAILS</ion-button>
+          <!-- <ion-button fill="outline" (click)="cancelVaultOrder(item)">CANCEL ORDER</ion-button> -->
+        </div>
+      </ion-label>
+    </ion-item>
+
+  </div>
+</ion-content>

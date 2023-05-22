@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref="/homenew"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Watch List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="list-area">
+    <ion-list>
+      <ion-item *ngFor = "let shop of watchListShop">
+        <ion-thumbnail slot="start">
+          <ion-img src="{{shop.image}}"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h4 class="shopTitle"><strong (click)="gotoshopproduct(shop.id,shop)">{{shop.name}}</strong>
+            <span (click)="unsave(shop.id)">
+              <ion-icon name="bookmark" class="active"></ion-icon>
+            </span>
+          </h4>
+          <p (click)="gotoshopproduct(shop.id,shop)">{{shop.address}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+	</div>
+</ion-content>
+

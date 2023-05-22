@@ -1,0 +1,67 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+		  <ion-item>
+        <h2 class="appbar_title">Liquidity</h2>
+			<!-- <ion-label position="floating">Select </ion-label>
+			<ion-select [(ngModel)]="city">
+       
+        <ion-select-option selected value="{{item.id}}" *ngFor="let item of cities; let i = index">{{item.name}}</ion-select-option>
+      </ion-select> -->
+		  </ion-item>
+	  </ion-title>
+    <ion-buttons slot="end">
+      <!-- <ion-button routerLink="/notification/{{ notificationdetails._id }}" routerDirection="forward" (click)="cancel(list._id)"> -->
+      <ion-button (click)="search()">
+        <ion-icon slot="icon-only" class="search_item" name="search-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="filterDistance()">
+        <ion-icon slot="icon-only" class="search_item" name="funnel"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+<div class="banner_wraper">
+  <!-- <img src="assets/banner-home.png"> -->
+  <ion-slides class="collection_banner" pager="true" [options]="slideOpts">
+    <ion-slide *ngFor="let item of banners">
+      <img src="{{item.image}}">
+    </ion-slide>
+  </ion-slides>
+</div>
+<div class="liquidity_vault_button" (click)="gotoliqudityVault()">
+  <img src="assets/vault.png">
+  <!-- <div class="bottom_button">
+    <p>Lorem ipsum dolor sit amet, quas commodo aliquam id sit, eos probo prima molestie cu, partiendo intellegebat an est.</p>
+  </div> -->
+</div>
+<div class="slide_item slide_item--mod-2">
+  <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let item of shops" (click)="gotoshopproduct(item.id,item)">
+            <div class="slide_box" >
+                <span class="rating">{{item.rating}}</span>
+                <div class="img_wrap" style="background: url({{item.image}}) no-repeat center; background-size: cover;"></div>
+                <div class="box_content">
+                  <h2>{{item.name}}</h2>
+                  <p>{{item.address}}</p>
+                </div>
+            </div>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+</div>
+<!-- <ion-fab vertical="bottom" slot="fixed" side="bottom" horizontal="end">
+    <ion-fab-button><img src="assets/filter.png"></ion-fab-button>
+ </ion-fab> -->
+</ion-content>

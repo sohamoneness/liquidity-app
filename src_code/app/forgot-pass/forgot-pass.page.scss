@@ -1,0 +1,56 @@
+ion-content {
+	--background: url(../../assets/banner-1.png) no-repeat center center / cover;
+
+	.login_section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+
+		.login_block {
+			display: block;
+			width: 100%;
+
+			.logo_wrap {
+			    padding: 0 0 37px;
+			    text-align: center;
+			    display: block;
+
+			    img {
+			    	max-width: 240px;
+			    }
+			}
+			.form_wrap {
+				p {
+					font-size: 13px;
+					line-height: 1.6;
+
+					span.spare {
+						display: inline-block;
+						position: relative;
+						padding: 0 6px;
+						font-weight: 400;
+
+						&:after {
+							width: 4px;
+							height: 4px;
+							border-radius: 50%;
+							display: inline-block;
+							position: absolute;
+							top: 45%;
+							right: 0;
+							transform: translate(50%, -50%);
+							background: #fff;
+							content: '';
+						}
+
+						&:last-child:after {
+							display :none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

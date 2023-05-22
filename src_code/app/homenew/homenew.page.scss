@@ -1,0 +1,31 @@
+ion-content {
+	--background: #eceff1;
+
+	.slide_item {
+		.slide_box {
+			.box_content {
+				// min-height: 89px;
+				h2{
+					font-size: 12px;
+					font-weight: 700;
+					margin-bottom: 0px;
+					line-height: 1.2;
+				}
+				p {
+					color: #808080;
+					font-size: 8px;
+					font-family: 'Nexa';
+				}
+			}
+		}
+	}
+}
+ion-title{
+	padding: 0px;
+	.appbar_title{
+		font-size: 20px;
+		color: #000;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+}

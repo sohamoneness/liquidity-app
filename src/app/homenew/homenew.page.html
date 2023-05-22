@@ -1,0 +1,233 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 3.38462C0 3.13981 0.0972524 2.90502 0.270363 2.73191C0.443473 2.5588 0.678262 2.46155 0.923077 2.46155H16.9231C17.1679 2.46155 17.4027 2.5588 17.5758 2.73191C17.7489 2.90502 17.8462 3.13981 17.8462 3.38462C17.8462 3.62944 17.7489 3.86423 17.5758 4.03734C17.4027 4.21045 17.1679 4.3077 16.9231 4.3077H0.923077C0.678262 4.3077 0.443473 4.21045 0.270363 4.03734C0.0972524 3.86423 0 3.62944 0 3.38462ZM23.0769 11.0769H0.923077C0.678262 11.0769 0.443473 11.1742 0.270363 11.3473C0.0972524 11.5204 0 11.7552 0 12C0 12.2448 0.0972524 12.4796 0.270363 12.6527C0.443473 12.8258 0.678262 12.9231 0.923077 12.9231H23.0769C23.3217 12.9231 23.5565 12.8258 23.7296 12.6527C23.9027 12.4796 24 12.2448 24 12C24 11.7552 23.9027 11.5204 23.7296 11.3473C23.5565 11.1742 23.3217 11.0769 23.0769 11.0769ZM12 19.6923H0.923077C0.678262 19.6923 0.443473 19.7896 0.270363 19.9627C0.0972524 20.1358 0 20.3706 0 20.6154C0 20.8602 0.0972524 21.095 0.270363 21.2681C0.443473 21.4412 0.678262 21.5385 0.923077 21.5385H12C12.2448 21.5385 12.4796 21.4412 12.6527 21.2681C12.8258 21.095 12.9231 20.8602 12.9231 20.6154C12.9231 20.3706 12.8258 20.1358 12.6527 19.9627C12.4796 19.7896 12.2448 19.6923 12 19.6923Z" fill="#28303F"/>
+          </svg>
+          
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+        Liquidity
+			<!-- <ion-label position="floating">Select </ion-label>
+			<ion-select [(ngModel)]="city">
+       
+        <ion-select-option selected value="{{item.id}}" *ngFor="let item of cities; let i = index">{{item.name}}</ion-select-option>
+      </ion-select> -->
+	  </ion-title>
+    <ion-buttons slot="end">
+      <!-- <ion-button routerLink="/notification/{{ notificationdetails._id }}" routerDirection="forward" (click)="cancel(list._id)"> -->
+      <ion-button (click)="search()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_21_31)">
+          <path d="M10.5691 0C4.74145 0 0 4.74145 0 10.5691C0 16.3971 4.74145 21.1382 10.5691 21.1382C16.3971 21.1382 21.1382 16.3971 21.1382 10.5691C21.1382 4.74145 16.3971 0 10.5691 0ZM10.5691 19.187C5.81723 19.187 1.95122 15.321 1.95122 10.5691C1.95122 5.81728 5.81723 1.95122 10.5691 1.95122C15.321 1.95122 19.187 5.81723 19.187 10.5691C19.187 15.321 15.321 19.187 10.5691 19.187Z" fill="#28303F"/>
+          <path d="M23.7142 22.3347L18.1207 16.7412C17.7395 16.36 17.1223 16.36 16.7411 16.7412C16.36 17.122 16.36 17.7399 16.7411 18.1207L22.3346 23.7142C22.4251 23.805 22.5326 23.8769 22.651 23.926C22.7694 23.975 22.8963 24.0002 23.0244 24.0001C23.1525 24.0002 23.2794 23.975 23.3978 23.9259C23.5162 23.8769 23.6237 23.8049 23.7142 23.7142C24.0953 23.3334 24.0953 22.7155 23.7142 22.3347Z" fill="#28303F"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_21_31">
+          <rect width="24" height="24" fill="white"/>
+          </clipPath>
+          </defs>
+        </svg>
+
+      </ion-button>
+      <ion-button (click)="filterDistance()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.923077 4.92302C0.678262 4.92302 0.443473 5.02027 0.270363 5.19338C0.0972524 5.36649 0 5.60128 0 5.8461C0 6.09091 0.0972524 6.3257 0.270363 6.49881C0.443473 6.67192 0.678262 6.76918 0.923077 6.76918V4.92302ZM0.923077 17.2307C0.678262 17.2307 0.443473 17.328 0.270363 17.5011C0.0972524 17.6742 0 17.909 0 18.1538C0 18.3986 0.0972524 18.6334 0.270363 18.8065C0.443473 18.9796 0.678262 19.0769 0.923077 19.0769V17.2307ZM8.30769 19.0769C8.55251 19.0769 8.7873 18.9796 8.96041 18.8065C9.13352 18.6334 9.23077 18.3986 9.23077 18.1538C9.23077 17.909 9.13352 17.6742 8.96041 17.5011C8.7873 17.328 8.55251 17.2307 8.30769 17.2307V19.0769ZM23.0769 19.0769C23.3217 19.0769 23.5565 18.9796 23.7296 18.8065C23.9027 18.6334 24 18.3986 24 18.1538C24 17.909 23.9027 17.6742 23.7296 17.5011C23.5565 17.328 23.3217 17.2307 23.0769 17.2307V19.0769ZM15.6923 4.92302C15.4475 4.92302 15.2127 5.02027 15.0396 5.19338C14.8665 5.36649 14.7692 5.60128 14.7692 5.8461C14.7692 6.09091 14.8665 6.3257 15.0396 6.49881C15.2127 6.67192 15.4475 6.76918 15.6923 6.76918V4.92302ZM23.0769 6.76918C23.3217 6.76918 23.5565 6.67192 23.7296 6.49881C23.9027 6.3257 24 6.09091 24 5.8461C24 5.60128 23.9027 5.36649 23.7296 5.19338C23.5565 5.02027 23.3217 4.92302 23.0769 4.92302V6.76918ZM0.923077 6.76918H4.61538V4.92302H0.923077V6.76918ZM0.923077 19.0769H8.30769V17.2307H0.923077V19.0769ZM19.3846 19.0769H23.0769V17.2307H19.3846V19.0769ZM15.6923 6.76918H23.0769V4.92302H15.6923V6.76918ZM18.4615 18.1538C18.4615 18.8882 18.1698 19.5926 17.6504 20.1119C17.1311 20.6313 16.4268 20.923 15.6923 20.923V22.7692C16.9164 22.7692 18.0903 22.2829 18.9559 21.4174C19.8214 20.5518 20.3077 19.3779 20.3077 18.1538H18.4615ZM15.6923 20.923C14.9579 20.923 14.2535 20.6313 13.7342 20.1119C13.2148 19.5926 12.9231 18.8882 12.9231 18.1538H11.0769C11.0769 19.3779 11.5632 20.5518 12.4287 21.4174C13.2943 22.2829 14.4682 22.7692 15.6923 22.7692V20.923ZM12.9231 18.1538C12.9231 17.4193 13.2148 16.715 13.7342 16.1957C14.2535 15.6763 14.9579 15.3846 15.6923 15.3846V13.5384C14.4682 13.5384 13.2943 14.0247 12.4287 14.8902C11.5632 15.7558 11.0769 16.9297 11.0769 18.1538H12.9231ZM15.6923 15.3846C16.4268 15.3846 17.1311 15.6763 17.6504 16.1957C18.1698 16.715 18.4615 17.4193 18.4615 18.1538H20.3077C20.3077 16.9297 19.8214 15.7558 18.9559 14.8902C18.0903 14.0247 16.9164 13.5384 15.6923 13.5384V15.3846ZM11.0769 5.8461C11.0769 6.58054 10.7852 7.28491 10.2658 7.80424C9.7465 8.32357 9.04214 8.61533 8.30769 8.61533V10.4615C9.53177 10.4615 10.7057 9.97522 11.5713 9.10967C12.4368 8.24412 12.9231 7.07017 12.9231 5.8461H11.0769ZM8.30769 8.61533C7.57325 8.61533 6.86888 8.32357 6.34955 7.80424C5.83022 7.28491 5.53846 6.58054 5.53846 5.8461H3.69231C3.69231 7.07017 4.17857 8.24412 5.04412 9.10967C5.90968 9.97522 7.08362 10.4615 8.30769 10.4615V8.61533ZM5.53846 5.8461C5.53846 5.11165 5.83022 4.40729 6.34955 3.88796C6.86888 3.36862 7.57325 3.07687 8.30769 3.07687V1.23071C7.08362 1.23071 5.90968 1.71698 5.04412 2.58253C4.17857 3.44808 3.69231 4.62202 3.69231 5.8461H5.53846ZM8.30769 3.07687C9.04214 3.07687 9.7465 3.36862 10.2658 3.88796C10.7852 4.40729 11.0769 5.11165 11.0769 5.8461H12.9231C12.9231 4.62202 12.4368 3.44808 11.5713 2.58253C10.7057 1.71698 9.53177 1.23071 8.30769 1.23071V3.07687Z" fill="#28303F"/>
+          </svg>
+                
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div class="banner_wraper">
+    <!-- <img src="assets/banner-home.png"> -->
+    <ion-slides class="collection_banner" pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let item of banners">
+        <img src="{{item.image}}">
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <ion-item-divider>
+    Favourite Drinks
+  </ion-item-divider>
+
+  <ion-slides class="favourite_items" pager="false" [options]="favourite">
+    <ion-slide>
+      <figure style="background-color: #5b352e;">
+        <img src="../../assets/15yo-single-malt-scotch-whisky.png">
+        <span>Glenfiddich</span>
+      </figure>
+    </ion-slide>
+    <ion-slide>
+      <figure style="background-color: #808000;">
+        <img src="../../assets/wine_PNG9461.png">
+        <span>First Press</span>
+      </figure>
+    </ion-slide>
+    <ion-slide>
+      <figure>
+        <img src="../../assets/corona_extra_355ml_sml.png">
+        <span>Corona</span>
+      </figure>
+    </ion-slide>
+    <ion-slide>
+      <figure style="background-color: #a82b30;"> 
+        <img src="../../assets/SmirnoffVodka.png">
+        <span>Smirnoff</span>
+      </figure>
+    </ion-slide>
+    <ion-slide>
+      <figure style="background-color: #357305;">
+        <img src="../../assets/Tanqueray-Ten-Gin-750ml-1.png">
+        <span>Tanqueray</span>
+      </figure>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-item-divider>
+    Watch Lists
+  </ion-item-divider>
+
+  <ion-slides class="wishlist_banner" pager="false" [options]="wishlists">
+    <ion-slide class="store_item" *ngFor="let item of shops" (click)="gotoshopproduct(item.id,item)">
+      <figure>
+        <ion-img src="{{item.image}}"></ion-img>
+        <div class="distance_sec">
+          <img src="../../assets/fav.svg"> <small>{{item.rating}}</small>
+        </div>
+      </figure>
+      <figcaption>
+        <div class="outlet_distance">
+          <h4 class="shopTitle"><strong>{{item.name}}</strong></h4>
+        </div>
+      </figcaption>
+    </ion-slide>
+  </ion-slides>
+  
+
+  <!-- <ion-slides class="wishlist_banner" pager="false" [options]="wishlists">
+    <ion-slide>
+      <img src="../../assets/aberlour_132.jpeg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/ailsabay_132.jpeg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/balblair_132.jpeg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/ardbeg_132.jpeg">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/bladnoch_132.jpeg">
+    </ion-slide>
+  </ion-slides> -->
+
+
+  <ion-item-divider>
+    Categories
+  </ion-item-divider>
+
+  <ion-slides class="category_banner" pager="false" [options]="categories">
+    <ion-slide>
+      <figure style="background-color: #cec2c0;">
+        <div class="category_text">
+          <span>Whisky</span>
+          <span>16 Brands</span>
+        </div>
+        <img src="../../assets/15yo-single-malt-scotch-whisky.png">
+      </figure>
+    </ion-slide>
+    <ion-slide>
+      <figure style="background-color: #d9d9b3;">
+        <div class="category_text">
+          <span>Wine</span>
+          <span>16 Brands</span>
+        </div>
+        <img src="../../assets/wine_PNG9461.png">
+      </figure>
+    </ion-slide>
+    <ion-slide>
+      <figure style="background-color: #fff3b3;">
+        <div class="category_text">
+          <span>Beer</span>
+          <span>16 Brands</span>
+        </div>
+        <img src="../../assets/corona_extra_355ml_sml.png">
+      </figure>
+    </ion-slide>
+    <ion-slide>
+      <figure style="background-color: #e5bfc1;"> 
+        <div class="category_text">
+          <span>Smirnoff</span>
+          <span>16 Brands</span>
+        </div>
+        <img src="../../assets/SmirnoffVodka.png">
+      </figure>
+    </ion-slide>
+    <ion-slide>
+      <figure style="background-color: #c2d5b4;">
+        <div class="category_text">
+          <span>Gin</span>
+          <span>16 Brands</span>
+        </div>
+        <img src="../../assets/Tanqueray-Ten-Gin-750ml-1.png">
+      </figure>
+    </ion-slide>
+  </ion-slides>
+
+
+
+<div class="liquidity_vault_button" (click)="gotoliqudityVault()">
+  <!-- <img src="assets/vault.svg"> -->
+  <h4>Try<br/>Liquidity Vault</h4>
+  <!-- <div class="bottom_button">
+    <p>Lorem ipsum dolor sit amet, quas commodo aliquam id sit, eos probo prima molestie cu, partiendo intellegebat an est.</p>
+  </div> -->
+</div>
+
+<ion-item-divider>
+  Outlets
+</ion-item-divider>
+
+<div class="store_list">
+  <div class="store_item" *ngFor="let item of shops" (click)="gotoshopproduct(item.id,item)">
+    <figure>
+      <ion-img src="{{item.image}}"></ion-img>
+    </figure>
+    <figcaption>
+      <div class="outlet_distance">
+        <h4 class="shopTitle"><strong>{{item.name}}</strong></h4>
+        <p>{{item.address}}</p>
+      </div>
+      <div class="distance_sec">
+        <small><ion-icon name="star"></ion-icon> {{item.rating}}</small>
+      </div>
+    </figcaption>
+  </div>
+</div>
+
+
+<!-- <ul class="store_list">
+  <li *ngFor="let item of shops" (click)="gotoshopproduct(item.id,item)">
+    <div class="img_wrap" style="background: url({{item.image}}) no-repeat center; background-size: cover;">
+      <span class="rating">{{item.rating}}</span>
+      <div class="box_content">
+        <h2>{{item.name}}</h2>
+        <p>{{item.address}}</p>
+      </div>
+    </div>
+  </li>
+</ul> -->
+<!-- <ion-fab vertical="bottom" slot="fixed" side="bottom" horizontal="end">
+    <ion-fab-button><img src="assets/filter.png"></ion-fab-button>
+ </ion-fab> -->
+</ion-content>

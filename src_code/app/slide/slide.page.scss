@@ -1,0 +1,37 @@
+ion-content {
+	--background: url(../../assets/BG.png) no-repeat center center / cover;
+
+	ion-slides {
+		height: 100%;
+	}
+	.slide {
+	    padding: 0 25px 50px;
+	    display: block;
+
+		img {
+			display: block;
+			margin: 98px auto 50px;
+			width: auto;
+			height: 250px;
+		}
+
+		h2 {
+			color: #dcc88d;
+			font-size: 19px;
+			text-transform: uppercase;
+			font-family: "Nexa";
+			font-weight: 900;
+		}
+		p {
+			color: #ffffff;
+			font-size: 12px;
+			font-family: "Nexa";
+		    margin: 21px 0 20px;
+		    font-weight: normal;
+		}
+	}
+	.swiper-pagination-bullets {
+	    bottom: 109px !important;
+	    --bullet-background: #fff;
+	}
+}

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref="/homenew"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{eventDetails.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+	<div class="resturant_img_wrap" *ngIf="eventDetails">
+		<img src="{{eventDetails.image}}">
+		
+	</div>
+	<div class="resturant_title_wrap" *ngIf="eventDetails">
+		<h1 class="heading">{{eventDetails.title}}</h1>
+		<p class="content">{{eventDetails.event_place}}</p>
+		
+	</div>
+
+	<div class="resturant_title_wrap mt-24">
+    <p class="content-2">Event Date : {{eventDetails.event_date}}</p>
+    <p class="content-2">Event Time : {{eventDetails.event_time}}</p>
+		<p class="content-2">{{eventDetails.description}}</p>
+	</div>
+
+</ion-content>

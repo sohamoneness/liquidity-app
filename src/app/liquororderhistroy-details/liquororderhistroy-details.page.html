@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Order Summary</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngIf="shop_details">
+    <ion-avatar slot="start">
+      <img src="{{shop_details.image}}" />
+    </ion-avatar>
+    <ion-label *ngIf="shop_details">
+      <h5>{{shop_details.name}}</h5>
+      {{shop_details.address}}
+    </ion-label>
+  </ion-item>
+
+  <div class="title_bar">
+		<h2 class="title">Order Details</h2>
+  </div>
+  
+  <div class="order-summary flex" *ngIf="all_order">
+    <div class="order-content">
+      <p><span>Order ID:</span> {{all_order.unique_id}}</p>
+      <p *ngIf="payment_type == '1'"><span>Transation Reference:</span> Online</p>
+    <p *ngIf="payment_type == '2'"><span>Transation Reference:</span> Wallet</p>
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col size="12"><p><span>Order Date:</span> {{all_order.created_at}}</p></ion-col>
+          <!-- <ion-col size="6"><p><span>Time:</span> 02:24 PM</p></ion-col> -->
+        </ion-row>
+        <ion-row>
+          <ion-col size="12"><p><span>Scheduled Date:</span> {{all_order.order_date}}</p></ion-col>
+          <!-- <ion-col size="6"><p><span>Time:</span> 02:24 PM</p></ion-col> -->
+        </ion-row>
+      </ion-grid>
+      <p><span>liquidity order code</span> {{all_order.unique_id}}</p>
+    </div>
+    <div>
+      <img src="https://chart.apis.google.com/chart?cht=qr&chs=300x300&chld=L|0&chl={{all_order.id}}" />
+    </div>
+  </div>
+
+  <div class="title_bar">
+		<h2 class="title">Order Summary</h2>
+  </div>
+  
+  <div class="order-summary" >
+    <ion-grid no-padding>
+      <ion-row *ngFor="let item of all_liquor_order_summary">
+        <ion-col size="8">
+          <h6>{{item.product_name}}</h6>
+        </ion-col>
+        <ion-col size="4" class="ion-text-right">
+          <p><span>{{item.quantity}} <ion-icon name="close-sharp"></ion-icon> <span class="currency">$</span> {{item.price}}</span></p>
+        </ion-col>
+      </ion-row>
+      <hr/>
+      <ion-row>
+        <ion-col size="8">
+          <h6>Subtotal</h6>
+        </ion-col>
+        <ion-col size="4" class="ion-text-right">
+          <h6><span class="currency">$</span> {{all_order.amount}}</h6>
+        </ion-col>
+        <ion-col size="8">
+          <h6>Restaurant Promo</h6>
+        </ion-col>
+        <ion-col size="4" class="ion-text-right">
+          <h6>- <span class="currency">$</span> {{all_order.deduct_amount}}</h6>
+        </ion-col>
+        <ion-col size="8">
+          <p><span>Taxes and charges</span></p>
+        </ion-col>
+        <ion-col size="4" class="ion-text-right">
+          <p><span><span class="currency">$</span> {{all_order.tax_amount}}</span></p>
+        </ion-col>
+      </ion-row>
+      <hr/>
+      <ion-row>
+        <ion-col size="8">
+          <h6>Total</h6>
+        </ion-col>
+        <ion-col size="4" class="ion-text-right">
+          <h6><span class="currency">$</span> {{all_order.total_amount}}</h6>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="title_bar">
+		<h2 class="title">Contact Outlet</h2>
+  </div>
+  
+  <div class="order-summary" *ngIf="shop_details"> 
+    <p><ion-icon name="call-sharp"></ion-icon> {{shop_details.phone}}</p>
+    <hr/>
+    <!-- <p><ion-icon name="call-sharp"></ion-icon> +91 8978975465</p> -->
+  </div>
+
+</ion-content>

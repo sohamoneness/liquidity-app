@@ -1,0 +1,28 @@
+
+<!-- <ion-content class="ion-padding">
+	<div>
+		<p class="otp_title">Enter the OTP your received</p>
+		<div class="otp_wrapper">
+			<ion-input placeholder="Enter Your OTP" required="true" maxLength="6" [(ngModel)]="otp"></ion-input>
+		</div>
+		<p class="otp_content">We will never share your number or spam you!</p>
+		<ion-button class="btn-continue" shape="round" routerLink="/login" routerDirection="forward" (click)="verify_otp()">Submit</ion-button>
+		<p class="sign_in" (click)="send_otp()">Didn’t receive the OTP? <span>Send Again</span></p>
+	</div>
+</ion-content> -->
+
+<ion-content>
+	<div class="row otpbg">
+		<div >
+			<div class="col">
+				<p class="otp_title">Enter the OTP you have received</p>
+				<div class="otp_wrapper">
+					<ion-input type="tel" placeholder="Enter Your OTP" required="true" maxlength="6" maxlength="6" [(ngModel)]="otp" class="custom-class"></ion-input>
+				</div>
+				<p class="otp_content">We will never share your number or spam you!</p>
+				<ion-button class="btn-continue" shape="round" routerDirection="forward" (click)="submitOtpVerification()">Submit</ion-button>
+			</div>
+			<p class="sign_in" (click)="resendOtp()">Didn’t receive the OTP? <span>Send Again</span></p>
+		</div>
+	</div>
+</ion-content>

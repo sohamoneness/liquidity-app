@@ -1,0 +1,37 @@
+ion-content {
+	--background: #eceff1;
+
+	.resturant_img_wrap {
+	    margin-bottom: 0;
+        background-color: #fff;
+        padding: 10px;
+
+        img {
+        	width: 100%;
+        }
+	}
+
+	.br-1 {
+		margin: 11px 0 15px;
+	}
+}
+ion-footer {
+	.footer_item_end {
+	    background-color: #dcc88d;
+        justify-content: center;
+        padding-right: 0;
+
+        p {
+            font-family: "Nexa" !important;
+            text-transform: uppercase;
+        }
+	}
+}
+
+.star-icon{
+	position: absolute;
+    top: -4px;
+    right: -4px;
+    color: #fff;
+    font-size: 18px;
+}

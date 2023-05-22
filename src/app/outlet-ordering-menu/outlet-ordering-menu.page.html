@@ -1,0 +1,56 @@
+
+<ion-header [translucent]="true">
+	<ion-toolbar>
+		<ion-buttons slot="start">
+		  <ion-back-button icon="chevron-back-outline" text="" defaultHref=""></ion-back-button>
+		</ion-buttons>
+		<ion-buttons slot="end">
+			<ion-button (click)="cart()">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+			</ion-button>
+		</ion-buttons>	  
+	</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+	<div class="resturant_img_wrap" *ngIf="shopDetails">
+		<img src="{{shopDetails.image}}">
+		<!-- <div class="rating_number">
+			<img src="../../assets/fav.svg">
+			<p>{{shopDetails.rating}}</p>
+		</div> -->
+	</div>
+	<div class="resturant_title_wrap" *ngIf="shopDetails">
+		<h1 class="heading">{{shopDetails.name}}</h1>
+		<p class="address"><img src="../../assets/res_pin.svg"> {{shopDetails.address}}</p>
+		<div class="br-1"></div>
+		<div class="btn_group">
+			<ion-button class="btn-outlet" (click)="callNow(shopDetails.phone)">CONTACT OUTLET</ion-button>
+			<ion-button class="btn-outlet" (click)="callHousingRules()">VIEW HOUSE RULES</ion-button>
+		</div>
+	</div>
+
+	<div class="res_content">
+		<p>More than just a bar; our services include Virtual Mixology Workshops, Cocktail Catering, Team-building events and more. We strive to make every event an immersive cocktail experience, working closely with our clients to ensure that we integrate our cocktail selections with the theme, season and/or style.</p>
+		<p>Warmly decorated, straightforward rooms come with Wi-Fi access, as well as cable TV, and tea and coffeemaking facilities.</p>
+		<p>There's a relaxed restaurant and a business centre. A generator is on-site. Parking is available.</p>
+	</div>
+
+	<div class="resturant_title_wrap mt-24">
+		<div class="rebate_tag">{{shopDetails.offer_rate}}% OFF</div>
+		<p class="content-2">{{shopDetails.offer_text}}</p>
+		<p class="content-2">{{shopDetails.house_rules}}</p>
+		<p class="content content-mod">Auto applied during checkout</p>
+	</div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div class="footer_content">
+  	<div class="footer_item_end" (click)="gotoOutLet()">
+  		<p>VIEW ONLINE ORDERING MENU</p>
+  		<img src="assets/arrow-right.png">
+  	</div>
+  </div>
+</ion-footer>

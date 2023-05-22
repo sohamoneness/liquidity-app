@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref="/homenew"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Notification List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="title_bar">
+    <h2 class="title">List of notifications</h2>
+  </div>
+  <div class="order_list">
+    <ion-item *ngFor="let item of notifications">
+      <ion-label>
+        <h3>{{item.notification_title}}</h3>
+        <p><span class="bold_count">{{item.notification_description}}</span></p>
+        <p>{{item.created_at}}</p>
+        
+      </ion-label>
+    </ion-item>
+  </div>
+</ion-content>

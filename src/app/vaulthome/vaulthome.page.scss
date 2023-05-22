@@ -1,0 +1,44 @@
+ion-content {
+	// --background: #fff url(../../assets/vault_bg.svg) bottom -40px center no-repeat;
+	--background-size: 100% auto;
+	width: 100%;
+	height: 100%;
+	--padding-top: 10px;
+	--padding-start: 10px;
+	--padding-end: 10px;
+	--padding-bottom: 10px;
+
+	.vault_menu {
+		.vault_item {
+			display: flex;
+			border-radius: 10px;
+			height: 120px;
+			margin-bottom: 16px;
+			align-items: center;
+			padding: 30px 100px 30px 30px;
+			background-size: cover;
+
+			img {
+				height: 100px;
+				width: auto;
+				margin-right: 30px;
+			}
+			h4 {
+				position: relative;
+				color: #fff;
+				font-size: 26px;
+				font-weight: 700;
+			}
+		}
+	}
+
+	p {
+		color: #000;
+		text-align: left;
+		font-size: 16px;
+
+		strong {
+			font-weight: 500;
+		}
+	}
+}

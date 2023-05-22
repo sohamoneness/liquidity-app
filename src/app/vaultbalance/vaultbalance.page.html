@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Redeem and Balance</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-divider>
+    Orders
+  </ion-item-divider>
+  <ion-list class="order_list" *ngFor="let order of orderDetails">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="{{order.product_image}}">
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{order.product_name}}</h3>
+        <p>Order ID: <span class="bold_count">{{order.unique_id}}</span></p>
+        <p>Category: <span class="bold_count">{{order.category_name}}</span></p>
+        <p>Price: <span class="bold_count"><span class="currency">$</span> {{order.total_amount}}</span> <span class="date">DATE:
+            {{order.order_date}}</span></p>
+        <div class="btn_grp">
+          <ion-button fill="outline" (click)="redeem(order)">REDEEM</ion-button>
+          <!-- <ion-button fill="outline" (click)="viewBalance(order)">VIEW BALANCE</ion-button> -->
+          <ion-button fill="outline" (click)="gotoViewBalance()">VIEW BALANCE</ion-button>
+        </div>
+      </ion-label>
+    </ion-item>
+    <div class="view_balance" id="divCount{{order.id}}"></div>
+  </ion-list>
+</ion-content>

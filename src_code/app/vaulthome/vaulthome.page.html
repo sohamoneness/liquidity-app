@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+		<ion-buttons slot="start">
+  			<ion-back-button icon="arrow-back-outline" defaultHref="/homenew"></ion-back-button>
+		</ion-buttons>
+        <!-- <ion-label>SELECTED LOCATION</ion-label>
+      	<ion-item>
+		  <ion-select value="kolkata">
+		    <ion-select-option selected value="kolkata">kolkata</ion-select-option>
+		    <ion-select-option value="mumbai">mumbai</ion-select-option>
+		    <ion-select-option value="bangalore">bangalore</ion-select-option>
+		    <ion-select-option value="delhi">delhi</ion-select-option>
+		  </ion-select>
+		</ion-item> -->
+		<ion-title>
+			<ion-item>
+				<h2 class="appbar_title">Liquidity</h2>
+			</ion-item>
+		</ion-title>
+		<ion-icon (click)="search()" slot="end" class="search_item" name="search-outline"></ion-icon>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="vaultlogo_wrap">
+		<img src="assets/vault-logo.png">
+		<p>Through <b>Liquidity Vault</b>, reserve your favorite brands at a special price and redeem your reserved product  across the outlets in the category of your choice. </p>
+	</div>
+	<div class="form_wrap">
+		<ion-button class="btn-submit" expand="block" shape="round" (click)="gotoReserveValut()">CATEGORY AND OUTLETS</ion-button>
+		<ion-button class="btn-submit" expand="block" shape="round" (click)="gotoReserveValut()">RESERVE AT VAULT</ion-button>
+		<ion-button class="btn-submit" expand="block" shape="round" (click)="gotoRedeemANDBalance()">REDEEM AND BALANCE</ion-button>
+		<ion-button class="btn-submit" expand="block" shape="round" (click)="gotoVaultOrderHistory()">ORDER HISTORY</ion-button>
+		<ion-button class="btn-submit" expand="block" shape="round" (click)="gotoFAQ()">FAQ</ion-button>
+	</div>
+</ion-content>

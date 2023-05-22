@@ -1,0 +1,25 @@
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+  		<ion-back-button icon="arrow-back-outline" defaultHref="/login"></ion-back-button>
+  	</ion-buttons>
+    <ion-title>Forgot Password</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-content padding>
+	<div class="login_section">
+			<div class="login_block">
+				<div class="logo_wrap">
+					<img src="../../assets/logo.png">
+				</div>
+				<div class="form_wrap">
+					<p>Please enter your email address below and we will send you information to change your password.</p>
+					<ion-input type="email" placeholder="Email Address" [(ngModel)]="usermail"></ion-input>
+					
+					<ion-button class="btn-submit" expand="block" shape="round" (click)="submitValues()">Reset Password</ion-button>
+					
+				</div>
+			</div>
+		</div>
+</ion-content>

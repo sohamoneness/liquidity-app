@@ -1,0 +1,1574 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('fonts/NexaBold.woff2') format('woff2'),
+        url('fonts/NexaBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('fonts/NexaLight.woff2') format('woff2'),
+        url('fonts/NexaLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('fonts/Nexa-Black.woff2') format('woff2'),
+        url('fonts/Nexa-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('fonts/Nexa-Bold.woff2') format('woff2'),
+        url('fonts/Nexa-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('fonts/Nexa-Book.woff2') format('woff2'),
+        url('fonts/Nexa-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('fonts/Nexa-Heavy.woff2') format('woff2'),
+        url('fonts/Nexa-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('fonts/Nexa-Regular.woff2') format('woff2'),
+        url('fonts/Nexa-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('fonts/Nexa-Light.woff2') format('woff2'),
+        url('fonts/Nexa-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('fonts/Nexa-XBold.woff2') format('woff2'),
+        url('fonts/Nexa-XBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nexa';
+    src: url('fonts/Nexa-Thin.woff2') format('woff2'),
+        url('fonts/Nexa-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+	font-family: "Nexa";
+	font-weight: normal;
+}
+.pl-0 {
+	padding-left: 0 !important;
+}
+.m-0 {
+	margin: 0 !important;
+}
+.mb-10 {
+	margin-bottom: 10px !important;
+}
+.pt-0 {
+	padding-top: 0 !important;
+}
+.pb-0 {
+	padding-bottom: 0 !important
+}
+.grey {
+    color: #808080 !important;
+}
+.green {
+	color: #5ba829 !important;
+}
+.black {
+	color: #111111 !important;
+}
+.pt-25{
+	padding-top: 25px;
+}
+ion-content {
+	--background: #fff;
+
+	ion-fab-button {
+		border: none;
+		--background: transparent;
+		--box-shadow: none;
+	}
+
+	ion-segment-button {
+		--indicator-color: #dcc88d;
+	}
+}
+.currency {
+	font-family: 'Roboto', sans-serif;
+}
+.form_wrap {
+	font-family: "Nexa";
+	font-weight: 300;
+	width: 100%;
+    max-width: 264px;
+    display: block;
+    margin: auto;
+
+	p {
+	    font-size: 12px;
+	    font-weight: 300;
+	    color: #ffff;
+	    text-align: center;
+	    margin: 0;
+        margin-bottom: 28px;
+	    font-family: "Nexa";
+	    font-weight: 300;
+
+	    &.terms {
+    	    font-size: 9px;
+    	    font-weight: 400;
+    	    margin-bottom: 0;
+
+    	    span {
+    	    	color: #dcc88d;
+    	    }
+	    }
+	    &.sign_in {
+	    	font-size: 13px;
+	    	margin-top: 26px;
+
+	    	span {
+    	    	color: #dcc88d;
+    	    }
+	    }
+	}
+
+	ion-input {
+	    background-color: rgba(255, 255, 255, 0.5);
+	    height: 50px;
+	    border-radius: 33px;
+	    padding: 0 15px !important;
+	    margin-bottom: 15px;
+	    text-align: center;
+	    color: #fff;
+	    --placeholder-opacity: 1;
+	    font-weight: 300;
+
+	    .native-input {
+	    	padding-left: 0;
+
+		    &::-webkit-input-placeholder {
+			  	color: #fff;
+			  	text-align: center;
+			  	font-size: 14px;
+			}
+
+			&:-ms-input-placeholder {
+			  	color: #fff;
+			  	text-align: center;
+			  	font-size: 14px;
+			}
+
+			&::placeholder {
+			  	color: #fff;
+			  	text-align: center;
+			  	font-size: 14px;
+			}
+		}
+	}
+	ion-select, ion-datetime {
+	    background-color: rgba(255, 255, 255, 0.5);
+	    height: 50px;
+	    border-radius: 33px;
+	    padding: 0 15px !important;
+	    margin-bottom: 15px;
+	    text-align: center;
+	    color: #fff;
+
+		&::-webkit-input-placeholder {
+			color: #fff;
+			text-align: center;
+			font-size: 14px;
+	  }
+
+	  &:-ms-input-placeholder {
+			color: #fff;
+			text-align: center;
+			font-size: 14px;
+	  }
+
+	  &::placeholder {
+			color: #fff;
+			text-align: center;
+			font-size: 14px;
+	  }
+	}
+	ion-datetime{
+		line-height: 48px;
+	}
+	ion-checkbox {
+	    display: inline-block;
+	    --background: transparent;
+	    border: 1px solid #fff;
+	    width: 10px;
+	    height: 10px;
+	    font-size: 9px;
+	    margin-bottom: -15px;
+
+	    &.checkbox-checked {
+	    	.checkbox-icon {
+		    	--border-color: transparent;
+	    		--background: transparent;
+	    	}
+	    }
+	}
+	ion-label {
+	    display: inline-block;
+	    color: #fff;
+	    font-size: 9px;
+	    padding-left: 16px;
+	    margin-bottom: 15px;
+	}
+	ion-button {
+		--background: #dcc88d !important;
+	    width: 100%;
+    	height: 50px;
+	    color: #000000;
+	    text-transform: uppercase;
+	    font-family: "Nexa";
+	    font-weight: 900;
+	    margin-bottom: 14px;
+        --padding-top: 5px;
+
+	    &.ion-activated {
+	    	--background: #dcc88d !important;
+	    	color: #000000;
+
+	    	.button-native {
+	    		&::after {
+	    			--background: #dcc88d !important;
+	    			color: #000000;
+	    		}
+	    	}
+	    }
+	}
+}
+p {
+	font-size: 12px;
+    margin: 0;
+    margin-bottom: 28px;
+    /*font-family: "Nexa" !important;*/
+
+    
+	&.terms {
+	    font-size: 10px;
+	    margin-bottom: 0;
+
+	    span {
+	    	color: #dcc88d;
+	    }
+    }
+    &.sign_in {
+    	font-size: 13px;
+    	margin-top: 26px;
+    	color: #fff;
+    	text-align: center;
+
+    	span {
+	    	color: #dcc88d;
+	    }
+    }
+}
+.btn-continue {
+	display: block;
+	margin: 0 auto;
+	width: 116px;
+	height: 31px;
+	--background: #dcc88d;
+	--background-activated: #dcc88d;
+	font-size: 14px;
+	color: #000;
+    --box-shadow: none;
+    font-family: "Nexa" !important;
+    font-weight: 900;
+    --padding-top: 4px;
+
+    &.btn-continue-mod {
+    	width: 202px;
+    }
+}
+ion-header {
+	&:after {
+		display:none;
+	}
+	ion-toolbar {
+		--background: #dcc88d;
+
+		ion-title {
+			font-size: 18px;
+			text-transform: capitalize;
+			color: #33373d;
+			letter-spacing: 0.04px;
+			font-family: "Nexa" !important;
+		}
+
+		ion-label {
+			color: #212121;
+			font-size: 10px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.03px;
+			font-family: "Nexa" !important;
+			padding-left: 16px;
+		}
+		ion-item {
+			--background: #dcc88d;
+			--border-color: #dcc88d;
+		    --min-height: 29px;
+
+			ion-select {
+				width: auto;
+				--border-bottom: 0;
+				color: #212121;
+				font-size: 20px;
+				font-weight: 600;
+				letter-spacing: 0.06px;
+				text-transform: capitalize;
+			    --padding-top: 0px;
+			    --padding-bottom: 0px;
+
+				.select-icon {
+					.select-icon-inner {
+						background: url(assets/arrow-down.png) no-repeat center;
+						background-size: auto;
+					}
+				}
+			}
+		}
+		ion-select {
+			position: relative;
+			--padding-start: 0;
+		}
+		.search_item {
+			width: 17px;
+			height: 17px;
+			color: #000000;
+		    margin-right: 15px;
+		}
+	}
+	ion-menu-button {
+		--color: #000000;
+	}
+	ion-back-button {
+		--color: #000000;
+	}
+	ion-botton {
+		--background: #000000;
+		
+		ion-icon {
+			--color: #000000;
+		}
+	}
+}
+
+ion-menu {
+	ion-content {
+		--background: #ffffff !important;
+		--padding-start: 0 !important;
+		--padding-end: 0 !important;
+		--padding-top: 0 !important;
+		--padding-bottom: 0 !important;
+
+		.list-md {
+			background: #ffffff !important;
+
+			ion-item {
+				--background: #ffffff;
+				border-radius: 0 !important;
+				--color: #000000;
+				font-size: 14px;
+
+				&.selected {
+					--background: #dcc88d !important;
+					--color: #000000;
+
+					ion-icon {
+						color: #000000 !important;
+					}
+				}
+			}
+		}
+	}
+}
+.alert-radio-label.sc-ion-alert-md {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.alert-button-inner.sc-ion-alert-md {
+	font-weight: 600;
+}
+.title_bar {
+	padding: 15px 20px;
+    background: #eceff1;
+}
+.title {
+	color: #33373d;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.03px;
+	text-transform: uppercase;
+    margin: 0;
+}
+// Modal scss
+.create-filter-modal {
+    --border-radius: 25px 25px 0 0;
+}
+.slide_item {
+    background-color: #fff;
+    padding: 10px 0 16px 12px;
+    margin-bottom: 5px;
+
+	.slide_box {
+		position: relative;
+	    border: 1px solid #d8d8d8;
+	    border-radius: 5px;
+        overflow: hidden;
+    	margin: 0 2px;
+
+	    .rating {
+    	    position: absolute;
+		    content: "";
+		    background-color: #87b23b;
+		    display: inline-flex;
+		    align-items: center;
+		    justify-content: center;
+		    width: 34px;
+		    height: 19px;
+		    border-bottom-left-radius: 5px;
+		    right: 0;
+		    top: 0;
+		    color: #ffffff;
+		    font-size: 11px;
+		    font-weight: 600;
+
+	    }
+
+	    .img_wrap {
+		    width: 100%;
+		    height: 100%;
+	        padding-bottom: 62%;
+	        img {
+	        	object-fit: cover;
+	        }
+	    }
+
+		.box_content {
+			text-align: left;
+			padding: 5px;
+			background-color: #fff;
+
+			h2 {
+				color: #33373d;
+			    font-size: 12px;
+			    text-transform: capitalize;
+			    font-weight: 600;
+			    margin: 0 0 3px;
+			}
+			p {
+				color: #808080;
+			    font-size: 9px;
+			    margin: 0;
+				font-family: "Nexa";
+			}
+		}
+
+		&.checklist {
+
+			label {
+				position: relative;
+				display: block;
+			}
+
+			input[type=radio] {
+				position: absolute;
+				opacity: 0;
+
+				&:checked + span {
+					position: relative;
+				    display: inline-block;
+
+					&:after {
+						background: url(assets/selected.png) no-repeat center;
+		        		background-size: cover;
+		        		width: 100%;
+		        		height: 100%;
+		        		content: '';
+		        		position: absolute;
+		        		top: 0;
+		        		left: 0;
+		        	}
+				}
+			}
+		}
+	}
+
+	&.slide_item--mod {
+		padding: 10px 12px 16px 12px;
+
+		.slide_box {
+		    margin: 0 2px 8px;
+
+			.box_content {
+				h2 {
+				    font-size: 10px;
+				}
+				p {
+				    font-size: 7px;
+				}
+			}
+		}
+	}
+}
+ion-footer {
+	.footer_content {
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+
+		.footer_item_start {
+		    background-color: #dcc88d;
+		    display: flex;
+		    align-items: center;
+		    justify-content: flex-start;
+	        min-height: 60px;
+		    width: 100%;
+		    padding: 0 10px;
+		    max-width: 42%;
+		    flex: 0 0 100%;
+
+			img {
+				margin-right: 6px;
+			}
+			P {
+			    margin: 0;
+			    color: #111111;
+			    font-size: 16px;
+			    letter-spacing: -0.02px;
+			    font-weight: 600;
+			    font-family: "Nexa" !important;
+			}
+
+			.item_total {
+				p {
+					font-size: 0;
+				    margin-bottom: 1px;
+
+					&.price_end {
+						font-size: 14px;
+						font-weight: 900;
+					}
+					small {
+					    font-size: 11px;
+    					font-weight: 600;
+					}
+				}
+			}
+		}
+		.footer_item_end {
+			background-color: #be9d4e;
+		    display: flex;
+		    align-items: center;
+	        justify-content: flex-end;
+		    min-height: 60px;
+		    width: 100%;
+		    padding-right: 20px;
+
+			img {
+				margin-left: 6px;
+				margin-right: 6px;
+			}
+			P {
+			    margin: 0;
+			    color: #111111;
+			    font-size: 16px;
+			    letter-spacing: -0.02px;
+			    font-weight: 600;
+			    font-family: "Nexa" !important;
+			    padding-top: 5px;
+			}
+		}
+	}
+}
+.mw_230 {
+	max-width: 58%;
+	flex: 0 0 100%;
+}
+.vaultlogo_wrap {
+	text-align: center;
+
+	img {
+		margin-bottom: 20px;
+	}
+
+	p {	
+		color: #ffffff;
+	    font-size: 12px;
+	    font-weight: 400;
+
+		b {
+			color: #dcc88d;
+			font-weight: 900;
+		}
+	}
+}
+.location_detect {
+	padding: 19px;
+
+	.location_detect_inner {
+		background: url(assets/location-pin.png) #fff no-repeat;
+		border: 1px solid #be9d4e;
+		background-position: 96% 50%;
+	    border-radius: 5px;
+    	padding: 10px 21px;
+
+		p {
+		    color: #33373d;
+		    font-size: 14px;
+		    letter-spacing: 0.4px;
+		    text-transform: capitalize;
+		    font-family: "Nexa" !important;
+		    margin: 0;
+		}
+	}
+}
+.resturant_img_wrap {
+	position: relative;
+	margin-bottom: 14px;
+
+	ion-buttons {
+		position: absolute;
+		left: 0;
+		color: #fff;
+	}
+
+	.rating_number {
+	    position: relative;
+	    width: 40px;
+	    height: 40px;
+	    display: block;
+	    line-height: 40px;
+	    margin: -25px auto 0;
+	    background-color: #5ba829;
+	    border-radius: 50%;
+	    z-index: 9;
+
+		p {
+		    margin: 0;
+		    text-align: center;
+		    font-size: 14px;
+		    color: #ffffff;
+		    font-family: "Nexa" !important;
+			padding-top: 3px;
+		}
+	}
+}
+.heading {
+	color: #33373d;
+	font-size: 13px;
+	font-weight: 600;
+	margin-top: 0;
+	margin-bottom: 4px;
+}
+.content {
+    color: #808080;
+    font-size: 10px;
+    font-family: "Nexa" !important;
+    margin-bottom: 0;
+}
+.br-1 {
+	background-color: #cbcbcb;
+	width: 100%;
+	height: 1px;
+	margin: 19px 0;
+}
+.rating {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+
+	li {
+		display: inline-flex;
+	    display: inline-flex;
+    	padding: 0 5px;
+
+    	ion-icon {
+		    font-size: 30px;
+    		color: #e5e5e5;
+    	}
+
+    	&.active {
+    		ion-icon {
+    			color: #ffb633;
+    		}
+    	}
+	}
+}
+.link_wrapper {
+    padding-top: 25px;
+
+	ion-item {
+		--padding-start: 0;
+
+		&:first-child {
+		    border-top: 1px solid #dedede;
+		}
+
+		ion-icon {
+	    width: 15px;
+		}
+
+		ion-label {
+		    color: #33373d;
+		    font-size: 13px !important;
+		    font-weight: 600;
+	    	font-family: "Nexa" !important;
+
+	    	img {
+			    width: 14px;
+			    height: 13px;
+			    margin-right: 6px;
+	    	}
+		}
+	}
+}
+ion-segment {
+	ion-segment-button {
+	    color: #33373d;
+	    font-size: 13px;
+	    font-weight: 600;
+	    letter-spacing: -0.01px;
+	    --indicator-height: 3px;
+	    font-family: "Nexa" !important;
+	}
+}
+.segment_2 {
+	padding-top: 0;
+
+	ion-segment {
+	    background-color: #eceff1;
+	    padding: 10px 0;
+
+	    ion-segment-button {
+	    	img {
+    		    height: 104px;
+	    	}
+
+	    	ion-button {
+	    		display: flex;
+	    		align-items: center;
+	    		justify-content: center;
+	    		width: 117px;
+				height: 24px;
+				--background: #212121;
+				--background-activated: #212121;
+				font-family: "Nexa" !important;
+				color: #dcc88d;
+				font-size: 11px;
+				letter-spacing: -0.01px;
+				--box-shadow: none;
+				--padding-top: 3px;
+				font-weight: 900;
+				text-transform: capitalize;
+
+				ion-activatable{
+					--background: #be9d4e;
+					color: #2a2a2a;
+				}
+	    	}
+
+	    	&.segment-button-checked {
+	    		--indicator-height: 0;
+	    		--indicator-transition: none;
+
+	    		ion-button {
+    			    --background: #dcc88d;
+    				--background-activated: #dcc88d;
+				    color: #212121;
+	    		}
+	    	}
+	    }
+	}
+}
+.drink_items {
+    padding: 5px 15px;
+
+	ion-item {
+		--padding-start: 0;
+		--padding-end: 0;
+		--inner-padding-end: 0;
+		
+		p {
+			margin-bottom: 0;
+		}
+
+		ion-grid {
+			ion-row {
+				ion-col {
+					.drink_content {
+						position: relative;
+
+						&.veg {
+						    padding-left: 15px;
+							background: url(assets/veg.png) no-repeat top left;
+							background-size: 10px 10px;
+							width: 100%;
+							height: 100%;
+						}
+
+						&.non-veg {
+						    padding-left: 15px;
+							background: url(assets/non-veg.png) no-repeat top left;
+							background-size: 10px 10px;
+							width: 100%;
+							height: 100%;
+						}
+
+						&.drink_content--mod {
+						    display: flex;
+    						align-items: center;
+    						justify-content: flex-end;
+
+    						button {
+    							height: 19px;
+    							background: transparent;
+
+    							img {
+    								height: 100%;
+    							}
+    						}
+						}
+
+						h3 {
+							color: #33373d;
+							font-size: 13px;
+							letter-spacing: 0.03px;
+							font-weight: 600;
+							font-family: "Nexa";
+							margin: 0;
+
+							&.no-margin {
+								margin-bottom: 0;
+							}
+						}
+						.net {
+						    font-weight: 600;
+						    color: #808080;
+						    margin: 3px 0;
+						}
+
+						ul {
+							margin: 0;
+							padding: 0;
+							list-style-type: none;
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+
+							li {
+								color: #808080;
+								font-size: 10px;
+								letter-spacing: 0.02px;
+								font-weight: 500;
+								flex: 0 0 auto;
+
+								.price_hike {
+									color: #5ba829;
+									display: block;
+									font-weight: 700;
+									font-size: 12px;
+
+									img {
+										margin-left: 1px;
+										width: 4px;
+									}
+									svg {
+										max-width: 10px;
+									    vertical-align: sub;
+										display: inline-block;
+									}
+								}
+								.price_down {
+									color: #da1c33;
+									display: block;
+									font-weight: 700;
+									font-size: 12px;
+
+									img {
+										margin-left: 1px;
+										width: 4px;
+									}
+									svg {
+										max-width: 10px;
+									    vertical-align: sub;
+										display: inline-block;
+									}
+								}
+								.price_now {
+									color: #000;
+									display: block;
+									font-weight: 700;
+									font-size: 12px;
+								}
+							}
+						}
+					}
+					.quantity {
+						display: flex;
+						align-items: center;
+						/*background: url(assets/plus.png) center no-repeat;
+						background-size: 100%;*/
+						width: 72px;
+						height: 28px;
+						border: 2px solid #dcc88d;
+						border-radius: 3px;
+						margin-left: auto;
+	    				margin-right: 5px;
+
+	    				div {
+	    					display: flex;
+	    					background: #e5e5e5;
+	    					flex: 1 0 0%;
+	    					height: 100%;
+	    				}
+
+						.plus {
+							flex: 0 0 100%;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+						}
+						p {
+						    margin: 0;
+						    color: #be9d4e;
+						    font-size: 11px;
+						    letter-spacing: -0.01px;
+						    text-transform: uppercase;
+						    font-weight: 600;
+						    flex: 1 0 0%;
+						    text-align: center;
+						    height: 100%;
+						    line-height: 26px;
+						    font-family: "Nexa" !important;
+						}
+						.minus {
+						 	flex: 0 0 100%;   
+						 	display: flex;
+							align-items: center;
+							justify-content: center;
+						}
+
+						&.quantity--mod {
+							background: url(assets/add.png) center no-repeat;
+						    background-size: 100%;
+						}
+
+						&.quantity--mod-2 {
+							background: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.drink_items_mod {
+		ion-item {
+			--inner-border-width: 0;
+			--border-width: 0;
+
+			ion-grid {
+				padding: 0;
+				ion-row {
+					ion-col {
+						ion-item {
+							--min-height: 28px;
+
+							&.placeholder_border {
+								--border-color: #c2a359;
+								--border-radius: 20px;
+								--border-width: 2px;
+
+								ion-thumbnail {
+									--border-radius: 0;
+									--size: 20px;
+								    width: 20px;
+    								height: 20px;
+								    margin: 0 0 0 10px;
+								}
+
+								ion-label {
+									font-size: 12px;
+								    margin: 0;
+								    margin-left: 10px;
+								    color: #b3b3b3;
+								    font-weight: 600;
+								    --placeholder-font-weight: 600;
+								}
+								ion-input {
+									font-size: 12px;
+									--padding-top: 0;
+									--padding-start: 10px;
+									--padding-bottom: 0;
+									--padding-end: 10px;
+									font-weight: 600;
+									--placeholder-color: #b3b3b3;
+									--placeholder-font-weight: 600;
+								}
+								ion-datetime {
+								    --padding-top: 0;
+								    --padding-end: 0;
+								    --padding-bottom: 0;
+								    font-weight: 600;
+								    font-size: 12px;
+									--placeholder-color: #b3b3b3;
+									--placeholder-font-weight: 600;
+								}
+							}
+						}
+					}
+					ion-radio-group {
+					    display: flex;
+					    align-items: center;
+					    justify-content: flex-start;
+
+					    ion-item {
+					    	margin-right: 25px;
+
+					    	ion-label {
+					    		font-size: 12px;
+					    		font-family: "Nexa" !important;
+					    	}
+
+					    	ion-radio {
+					    		margin-inline-end: 10px;
+					    		--color-checked: #000;
+				    		    width: 15px;
+    							height: 15px;
+					    	}
+					    }
+					}
+				}
+			}
+		}
+	}
+}
+.liquor_items {
+	.item {
+		ion-thumbnail {
+
+		}
+		.drink_content {
+		    width: 100%;
+	        padding: 5px 0;
+
+			h3 {
+				color: #33373d;
+				font-size: 12px;
+				letter-spacing: 0.03px;
+				font-family: "Nexa" !important;
+				margin: 0;
+
+				&.no-margin {
+					margin-bottom: 0;
+				}
+			}
+			.unit_category {
+				display: flex;
+			    align-items: center;
+			    justify-content: space-between;
+
+			    ion-item {
+			    	--padding-start: 0;
+			    	--inner-padding-end: 0;
+			    }
+
+				ul {
+				    display: flex;
+				    align-items: center;
+				    justify-content: space-between;
+				    width: 100%;
+				    margin: 0;
+				    padding: 0;
+				    list-style: none;
+				    border: 2px solid #be9d4e;
+				    border-radius: 3px;
+				    overflow: hidden;
+
+					li {
+					    display: inline-block;
+					    width: calc(100% / 3);
+						
+						label {
+							color: #808080;
+							font-size: 13px;
+							line-height: 13px;
+							letter-spacing: -0.01px;
+							text-align: center;
+							background-color: #e5e5e5;
+							padding: 3px;
+							font-family: "Nexa" !important;
+							border-right: 1px solid #8c8c8c;
+							display: block;
+
+							&:last-child {
+								border-right: 0;
+							}
+						}
+
+						input[type="radio"] {
+							position: absolute;
+							opacity: 0;
+
+							&:checked + label {
+								background-color: #111111;
+				        		color: #dcc88d;
+							}
+						}
+
+				        &:last-child {
+				        	border-right: 0;
+				        }
+
+				        &.active {
+				        	background-color: #111111;
+				        	color: #dcc88d;
+				        }
+
+					    span {
+			    	        display: block;
+						    margin-top: 2px;
+						    font-size: 7px;
+						    line-height: 7px;
+						    text-transform: uppercase;
+						    font-family: "Nexa" !important;
+					    }
+					}
+
+					& + ul {
+						width: 100%;
+					    margin-top: 5px;
+					}
+				}
+				ion-select {
+				    display: inline-flex;
+				    width: 50%;
+				    border: 2px solid #be9d4e;
+				    border-radius: 5px;
+				    padding: 6px 6px 3px;
+				    font-size: 13px;
+				    text-transform: none;
+				    font-weight: 600;
+				    color: #be9d4e;
+				    letter-spacing: -0.01px;
+					font-family: "Nexa" !important;
+					position: relative;
+					max-width: 100%;
+					width: 100%;
+					line-height: 14px;
+					// comment
+				}
+			}
+		}
+	}
+}
+.banner_wraper {
+	font-size: 0;
+
+	img {
+		width: 100%;
+	}
+}
+.short_count {
+    margin: 0;
+    color: #808080;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-align: right;
+
+    svg {
+    	display: inline-block;
+    	vertical-align: sub;
+    	margin-right: 5px;
+    }
+}
+.liquidity_vault_button {
+    padding: 10px 5px;
+
+    img {
+    	width: 100%;
+    }
+
+    .bottom_button {
+    	background: url(assets/bottom_layer.png) center no-repeat;
+	    background-size: 98% 100%;
+	    width: 100%;
+	    height: 100%;
+	    padding: 20px 16px 14px;
+	    color: #4d4d4d;
+	    font-weight: 600;
+
+	    p {
+    	    margin: 0;
+	    }
+    }
+}
+.slide_item--mod-2 {
+    padding: 0 11px 16px 11px;
+    background-color: transparent;
+
+    ion-grid {
+	    background-color: #fff;
+	    padding: 5px;
+	    box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.5);
+	    border-radius: 3px;
+
+	    .slide_box {
+    	    margin: 0;
+	    }
+    }
+}
+.order_list {
+    padding: 0 5px;
+
+	.item {
+		border-bottom: 1px solid #cbcbcb;
+		--border-color: transparent;
+		--padding-start: 0;
+		--inner-padding-end: 0;
+
+		ion-thumbnail {
+		    width: 97px;
+			height: 97px;
+			--border-radius: 3px;
+			overflow: hidden;
+		}
+		ion-label {
+			h3 {
+			    color: #33373d;
+    			font-size: 13px;
+    			font-family: "Nexa" !important;
+			}
+			p {
+			    color: #808080;
+			    font-size: 10px;
+			    font-weight: 600;
+		        line-height: 14px;
+
+			    span {
+		    	    color: #be9d4e;
+    				font-weight: 600;
+
+    				&.date {
+    					color: #808080;
+    					font-size: 10px;
+    					text-transform: uppercase;
+    					letter-spacing: 0.03px;
+    					font-weight: 400;
+    					margin-left: 30px;
+    				}
+			    }
+			}
+			.btn_grp {
+				ion-button {
+					font-size: 0.6rem;
+					height: 27px;
+					font-weight: 700;
+					// font-family: "Nexa" !important;
+					text-transform: uppercase;
+					--background-activated: #dcc88d;
+					--background-focused: #dcc88d;
+					--color-activated: #fff;
+					--color-focused: #fff;
+					--padding-top: 2px;
+				    --padding-start: 16px;
+    				--padding-end: 16px;
+				    margin-right: 5px;
+				}
+			}
+		}
+	}
+	.view_balance {
+		background-color: #eceff1;
+		margin: 0 -15px;
+		padding: 0 15px;
+
+		ion-grid {
+		    padding: 7px 0;
+    		border-bottom: 1px solid #cbcbcb;
+
+			ion-row {
+				ion-col {
+					.unit {
+						background: url(assets/view.png) center no-repeat;
+					    background-size: 100% 100%;
+					    width: 100%;
+					    height: 20px;
+					    padding: 4px 7px;
+
+						p {
+					        margin: 0;
+						    color: #be9d4e;
+						    font-weight: 600;
+						    font-size: 8px;
+						    width: 100%;
+
+						    span {
+						    	color: #111111;
+				    	    	margin-left: 11px;
+		    	    	    	float: right;
+						    }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.content {
+	font-size: 10px;
+	letter-spacing: 0.03px;
+	font-weight: 600;
+}
+.resturant_title_wrap {
+	background-color: #fff;
+	padding: 11px 25px;
+
+	.heading {
+		font-family: "Nexa" !important;
+	    font-size: 18px;
+	    text-align: center;
+	}
+	.content {
+		text-align: center;
+	}
+}
+.btn_group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.btn-outlet {
+    display: block;
+    margin: 0 auto;
+    width: 145px;
+    height: 32px;
+    --background: #dcc88d;
+    --background-activated: #dcc88d;
+    font-size: 9px;
+    color: #000;
+    font-weight: 700;
+    --box-shadow: none;
+    font-family: "Nexa" !important;
+    text-transform: uppercase;
+    --padding-top: 3px;
+}
+.mt-24 {
+	margin-top: 24px;
+}
+.rebate_tag {
+    width: 83px;
+    height: 25px;
+    background: #dcc88d;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -25px auto 10px;
+    font-family: "Nexa" !important;
+    font-size: 11px;
+    color: #111111;
+    font-weight: 900;
+    padding-top: 2px;
+}
+.content-2 {
+    color: #808080;
+    font-family: "Nexa" !important;
+    margin-bottom: 12px;
+    text-align: center;
+}
+.content-mod {
+    color: #5ba829;
+    font-size: 11px;
+}
+.text-deleted {
+	position: relative;
+	overflow: hidden;
+	margin: 0 68px 25px;
+
+	&:before {
+		position: absolute;
+		content: "";
+		background-color: rgba(255, 255, 255, 0.25);
+		width: 40%;
+		height: 2px;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+	}
+	&:after {
+		position: absolute;
+		content: "";
+		background-color: rgba(255, 255, 255, 0.25);
+		width: 40%;
+		height: 2px;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+	}
+
+	h5 {
+	    color: #ffffff;
+	    font-size: 14px;
+	    text-transform: uppercase;
+	    text-align: center;
+	    margin: 0;
+	}
+}
+.social_btn_grp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    border-radius: 51px;
+    overflow: hidden;
+    margin-bottom: 35px;
+
+	.social_btn-1 {
+        display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    height: 50px;
+	    padding: 0 25px;
+	    font-size: 0;
+
+	    img {
+	    	height: 20px;
+		    filter: brightness(0) invert(1);
+		    margin-right: 10px;
+	    }
+
+	    p {
+    	    margin: 0;
+		    font-size: 14px;
+		    font-weight: 600;
+		    text-transform: uppercase;
+		    font-family: "Nexa" !important;
+		    letter-spacing: 2px;
+	    }
+
+	    &.facebook {
+	    	background-color: #1877f2;
+	    }
+	    &.google {
+	    	background-color: #ea4335;
+	    }
+	} 
+
+}
+.signup_text {
+	span {
+		color: #dcc88d;
+	}
+}
+.cardAdd{
+	ion-icon{
+		width: 25px; 
+		height: 25px;
+		padding-top: 5px;
+		margin-left: 8px;
+	}
+}
+.circle{
+	ion-avatar{
+		width: 24px !important;
+		height: 24px !important;
+	}
+	ion-input{
+		height: 38px;
+	}
+	ion-datetime{
+		padding-left: 5px;
+		--padding-top: 14px;
+    	--padding-bottom: 9px;
+	}
+}
+.note-text{
+	font-size: 11px;
+    text-transform: capitalize;
+    padding: 0 15px 10px 15px;
+    color: #fa5369;
+    font-weight: 600;
+    line-height: 16px;
+    margin: 0;
+    letter-spacing: 0.5px;
+}

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+  		<ion-back-button></ion-back-button>
+  	</ion-buttons>
+    <ion-title>Nearest Shop</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="changeView()"><ion-icon slot="icon-only" [name]="buttonIcon"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="map_main_div">
+    <div #map id="map" *ngIf="view=='map'"></div>
+    <div class="address_sec" *ngIf=showMarker>
+      <span (click)="closeWindow()">
+        <ion-icon name="close-outline"></ion-icon>
+      </span>
+     
+      <ion-item *ngIf="mapMarkers"> 
+        <ion-thumbnail slot="start">
+          <ion-img src={{mapMarkers.image}}></ion-img>
+        </ion-thumbnail>
+        <ion-label (click)="gotoDetials(mapMarkers.id)">
+        <h4> {{mapMarkers.title}}</h4>
+        <p>{{mapMarkers.address}}</p>
+        <small>{{ mapMarkers.distance }}</small>
+        </ion-label>
+      </ion-item>
+    </div>
+  </div>
+	<div class="list-area" *ngIf="view=='list'">
+		<ion-list>
+      <ion-item *ngFor = "let shop of shopList">
+        <ion-thumbnail slot="start">
+          <ion-img src="{{shop.image}}"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h4 class="shopTitle"><strong (click)="gotoshopproduct(shop.id,shop)">{{shop.name}}</strong>
+            <span (click)="save(shop.id,shop.is_in_watchlist)">
+              <ion-icon name="bookmark-outline" *ngIf="shop.is_in_watchlist==0"></ion-icon>
+              <ion-icon name="bookmark" class="active" *ngIf="shop.is_in_watchlist==1"></ion-icon>
+            </span>
+          </h4>
+          <p (click)="gotoshopproduct(shop.id,shop)">{{shop.address}}</p>
+          <div class="distance_sec">
+            <p >
+              <small><ion-icon name="compass-outline"></ion-icon>
+                {{shop.distance}}</small>
+              <small><ion-icon name="time-outline"></ion-icon> {{shop.time}}min</small>
+            </p>
+            <!-- <span class="distance_btn" (click)="showDistance()">
+              <ion-icon name="navigate-circle-outline"></ion-icon>Distance
+            </span>  -->
+            <a href="https://www.google.com/maps/dir/?api=1&travelmode=driving&layer=traffic&destination={{shop.lat}},{{shop.lng}}" class="distance_btn">
+              <ion-icon name="navigate-circle-outline"></ion-icon>Distance
+            </a>
+          </div>
+                
+        </ion-label>
+      </ion-item>
+    </ion-list>
+	</div>
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button icon="arrow-back-outline" defaultHref="/homenew"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search Result</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="title_bar">
+    <h2 class="title">{{product_name}}</h2>
+  </div>
+  <div class="order_list">
+    <ion-item *ngFor="let item of shopList">
+      <!-- <ion-avatar slot="start">
+        <img src="{{item.shop.image}}">
+      </ion-avatar> -->
+      <ion-label>
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col size="12">
+              <h3>{{item.shop.name}}</h3>
+              <p class="address_text">{{item.shop.address}}</p>      
+            </ion-col>
+            <ion-col size="8">
+              <div class="drink_content">
+                <ul>
+                  <li>HIGH: <span class="price_hike d-block"><span class="currency">$</span> {{item.highest_price | number : '.2-2'}} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5ba829" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg></span></li>
+                  <li>LOW: <span class="price_down d-block"><span class="currency">$</span> {{item.lowest_price | number : '.2-2'}} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#da1c33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></span></li>
+                  <li>NOW: <span class="price_now d-block"><span class="currency">$</span> {{item.current_price | number : '.2-2'}}</span></li>
+                </ul>
+              </div>
+            </ion-col>
+            <ion-col size="4">
+              <div class="quantity">
+                <div (click)="minuses(item)">
+                  <span class="minus"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus"><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                </div>
+                <p>{{item.count}}</p>
+                <div (click)="pluses(item)">
+                  <span class="plus" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+                </div>
+              </div>
+              <span small class="cart_ic" (click)="goToaddToCart(item)">
+                <ion-icon slot="end" class="cart_btn" name="cart-outline"></ion-icon>
+              </span> 
+              <small *ngIf="item.count!=0">{{total}}</small>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-label>
+    </ion-item>
+  </div>
+</ion-content>

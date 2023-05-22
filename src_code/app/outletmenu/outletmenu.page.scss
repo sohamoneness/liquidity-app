@@ -1,0 +1,75 @@
+ion-content {
+	.button.conpare_btn {
+		--background: #fff;
+		--box-shadow: none;
+		border: 2px solid #dcc88d;
+		width: 28px;
+		height: 28px;
+		border-radius: 3px;
+		--padding-start: 0;
+		--padding-end: 0;
+		margin: 0;
+
+		img {
+			max-width: 20px;
+		}
+	}
+	.quantity {
+		display: inline-flex;
+		vertical-align: top;
+	}
+	.drink_items {
+		padding: 5px;
+
+		ion-grid {
+			--ion-grid-padding: 0;
+		}
+	}
+}
+.fav_sec{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.active{
+		color: #dcc88d;
+	}
+}
+
+ion-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 117px;
+    height: 24px;
+    --background: #212121;
+    --background-activated: #212121;
+    font-family: "Nexa" !important;
+    color: #dcc88d;
+    font-size: 11px;
+    letter-spacing: -0.01px;
+    --box-shadow: none;
+    --padding-top: 3px;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+ion-slides{
+	background-color: #f9f9f9;
+    padding: 10px 0;
+}
+.cmop{
+	position: absolute;
+    top: 5px;
+    width: 30px;
+    padding: 5px;
+    border: 2px solid #d5c289;
+    height: 28px;
+    background: #dcc88d;
+}
+
+.swiper-slide img {
+    width: auto;
+    max-width: 90px;
+    height: auto;
+    max-height: 90px;
+    object-fit: contain;
+}
